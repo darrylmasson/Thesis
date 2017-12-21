@@ -1,0 +1,60 @@
+
+% chapter four: NR calibration
+
+\chapter{Nuclear Recoil (NR) Calibrations}
+
+In XENON100 nuclear recoil calibrations were done through use of YBe and AmBe~\cite{}. However, the several meters of water surrounding the outer cryostat are very good at moderating and absorbing neutrons. While there's no reason why a source cannot be lowered into the water tank next to the detector or a beam pipe installed and moved into position for use~\cite{LUX}, there is a better way. YBe and AmBe both produce a spectrum of neutron energies. Also, XENON1T is big enough that it will be possible to resolve multiple scatters within the fiducial volume. This allows the possibility of using multiple scatters to perform the energy calibration. Recall elastic scattering between two objects. Given the scattering angle of the target, we can find the energy deposited using
+\begin{equation}
+E_{recoil} = \frac{2 E_n}{\frac{m_n}{m_{Xe}}\,(1+\frac{m_{Xe}}{m_n})^2}(1-\cos \theta)
+\end{equation}
+
+Here, $E_n$ is the energy in the incident neutron, $m_{Xe}$ and $m_n$ are the masses of the xenon and the neutron, and $\theta$ is the scattering angle. If the neutrons are monoenergetic, then a very precise nuclear recoil calibration can be performed in situ by selecting various scattering angles. Monoenergetic neutrons can easily be created from fusion reactions, of which two candidates are $^2_1D + ^2_1D \rightarrow ^3_2He (0.82 \n{MeV}) + n (2.45\n{MeV})$ (50\% branching ratio) and $^2_1D + ^3_1T \rightarrow ^4_2He (3.6\n{MeV}) + n (14.1\n{MeV})$.
+
+A DD reaction neutron generator was acquired from NSD Fusion for the purpose of performing the nuclear recoil calibrations on XENON1T. Detectors selected to calibrate it are liquid scintillators containing the chemical EJ-301, an organic liquid polymer with high hydrogen density, manufactured by Eljen Technologies, and is identical to the older and more well-known NE-213.
+
+\section{Pulse Shape Discrimination (PSD)}
+
+EJ-301 is sensitive to both fast neutrons and $\gamma$ particles, but reacts differently to them. Neutron signals appear differently from $\gamma$ signals because the $\gamma$ only excites the electrons into a short-lived singlet state, where the neutron promotes the electrons into a longer-lived triplet state~\cite{}. Processing algorithms can be written to discriminate between waveforms of these two particles. The work-horse algorithm, used since the ancient times of analog processing, is known as the Charge Comparison Method~\cite{}. The advent of digital computing and cheap data storage means that data processing now does not necessarily need to be done live, allowing many other algorithms to be used for discrimination.
+
+Traditionally, the quantification of discrimination was done by making a histogram of the discrimination parameter, fitting Guassian curves to the neutron and $\gamma$ populations, and defining a Figure of Merit as the separation of the peaks divided by the sum of the full widths at half maximum. However, the two populations in question are not generally Gaussians, so this is like trying to measure a round hole with a square peg.
+
+\subsection{Charge Comparison Method (CCM)}
+
+This is a method based on two integration windows or gates of the pulse. One window is called the fast or short window, the other the slow or long window. The discrimination parameter used to differentiate these two types of pulse is the ratio of the slow integral value to the fast integral value. If the end of the fast window coincides approximately with the end of the typical $\gamma$ pulse, the slow window will contain very little other than the baseline, so the discrimination parameter will be close to unity. For neutron events, however, the pulse contains a significant tail that extends beyond the end of the fast window, which is captured by the slow window. In this case, the discrimination parameter will be somewhat above unity.
+
+\subsection{Fourier Series Analysis (DFT)}
+
+\subsection{Laplace Transformations (LT)}
+
+As EJ-301 exhibits decay modes with different decay constants, a Laplace transform is an effective method of identifying these modes. The Laplace transform of a function is defined as
+\begin{equation} \label{eq:laplace_transform}
+\mathcal{L}(s) = \int_0^\infinity \n{d}t\,f(t)e^{-st}
+\end{equation}
+
+\subsection{Fitting with Standard Events}
+
+Once some discrimination has been done with a reasonably reliable method, it is possible to create a standard waveform of each of the neutron and $\gamma$ events. Events that pass a discrimination cut can be selected, aligned, and averaged. This will create a standard event or template waveform characterizing a detector's response to a given particle type. The advantage of this is that it will tend to reduce the effects of electronic noise. These standard events can then be fit to a captured waveform. Free parameters of the fit are a vertical offset or baseline shift, a horizontal offset or trigger shift, and a vertical scaling parameter. If the waveforms used to generate the standard events are all of a very energy band, like the $^{137}$Cs Compton edge (447 keV), the fit will serve not only to discriminate between neutron and gamma events, but will also yield an accurate measurement of the energy of the event.
+
+\subsubsection{Generating Standard Events}
+
+To generate these standard events, one must first identify waveforms to use. This must be done via some other method of discrimination. The standard events should be made by averaging a set of events with an extremely high purity, so aggressive cuts should be made to this end. To ensure sufficient statistics, a combination of several dozen files of data collected with the NG were used. The cuts applied to these events are a cut in energy (to select events at the $^{137}$Cs Compton edge), cuts in the CCM discrimination parameter (to select either neutron or $\gamma$ events, cuts in the cleanliness of the waveforms (RMS values of the pre- and post-pulse baselines), and a cut in the location of the peak.  The details of these cuts are given in table~\ref{tab:standard_event_cuts}.
+
+\begin{table}
+	\begin{tabular}{ l | l | l } \hline
+		Cut & Events left & Acceptance \\ \hline
+		None & 211528247 & 1.0 \\ \hline
+		Energy & 162881 & $7.7\times10^{-4}$ \\ \hline
+		Pre-pulse RMS & 162519 & \\ \hline
+		Post-pulse RMS & & \\ \hline
+		Neutron & & \\ \hline
+		$\gamma$ & & \\ \hline
+	\end{tabular}
+	\label{tab:standard_event_cuts}
+	\caption{Cuts used to select events to average to create standard events}
+\end{table}
+
+Next, the waveforms must all be aligned with some sample, such as the sample that triggered the event. Then, waveforms are averaged together to create a preliminary standard event. This preliminary standard event is then fit to all the waveforms that made it. Outliers to the distribution can then be identified and removed from the list of suitable events. This process can be iterated several times to improve the quality of the standard events, but the gains rapidly diminish. With sifficiently high statistics ($\mathcal{O}(10^5)$ events passing cuts), it was found that iterating resulted in negligible changes to the shape of the standard events.
+
+\section{Neutron generator flux calibration}
+
+The neutron generator employs inertial electrostatic confinement (IEC) to achieve fusion. In IEC fusors, a cage in the middle of the chamber is held at some high voltage. Deuterium gas is injected into the (otherwise evacuated) chamber and ionized, which causes the deuterons to fall inwards towards and then into the cage. When a sufficient population of ions has been achieved, they form a virtual anode just inside the actual cage mesh. This provides sufficient extra electric field strength to contain the deuterons and enough energy for some to achieve fusion. Half of the fusion reactions will produce the desired monoenergetic neutron, the other branching ratio is $^2_1D + ^2_1D \rightarrow ^3_1T (1.01 \n{MeV}) + p^+ (3.02 \n{MeV})$. The reaction rate depends on the high voltage and current applied to the confining cage, so to understand the operation of the neutron generator, the response to these parameters must be understood.

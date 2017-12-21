@@ -1,0 +1,64 @@
+% Thesis root file. yay.
+
+\documentclass[phys,dissertation]{puthesis}
+
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{graphicx}
+\sloppy
+
+% Put % at the end of the last line to avoid getting an extra space
+% in the abstract.
+\title{
+	The Search for Dark Matter \\%
+	with XENON1T%
+}
+
+\author{Darryl Masson}{Masson, Darryl}
+
+\pudegree{Doctor of Philosophy}{PhD}{May}{2018}
+
+\majorprof{Rafael Lang}
+
+\campus{West Lafayette}
+
+\input{defs}
+
+%\includeonly{front, chapter_one}
+
+\begin{document}
+
+\volume
+
+% Front matter (dedication, etc.).
+\include{front}
+
+% evidence for DM
+\include{chapter_one}
+
+% searching for DM
+\include{chapter_two}
+
+% XENON1T
+\include{chapter_three}
+
+% NR calibration
+\include{chapter_four}
+
+% ER calibration
+\include{chapter_five}
+
+%\include{chapter_six}
+
+%\include{recommendations}
+
+\appendices
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\include{vita}
+
+\end{document}
