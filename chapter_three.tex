@@ -1,40 +1,39 @@
-
 % chapter three: xenon
 
 \chapter{The XENON1T Experiment}
 
-The leading WIMP direct detection experiment is run by the XENON collaboration, of which XENON1T is the latest version of a series of ever-larger detectors~\cite{}. Built in central Italy at Laboratori Nazionali del Gran Sasso (LNGS), XENON1T is the largest and most sensitive xenon dual-phase time projection chamber (TPC) in the world at the time of commisioning, containing 3300 kg of xenon.
+%The leading WIMP direct detection experiment is run by the XENON collaboration, of which XENON1T is the latest version of a series of ever-larger detectors~\cite{}. Built in central Italy at Laboratori Nazionali del Gran Sasso (LNGS), XENON1T is the largest and most sensitive xenon dual-phase time projection chamber (TPC) in the world at the time of commisioning, containing 3300 kg of xenon.
 
 \section{Operational Overview}
 
-The operation of a dual-phase TPC is as follows. When something interacts with an atom (xenon, argon, etc) inside the detector, it will free a number of electrons, either directly or via the deexcitation of the nucleus after scattering inelastically. Some of these electrons will recombine instantly with the ion, producing scintillation light that is collected with the top and bottom PMT arrays. This signal is variably called the S1, prompt, or scintillation signal. An electric field is applied to the target volume, so some of the electrons will drift upwards towards the surface of the liquid. The ion would drift down and eventually collect electrons from the cathode mesh near the bottom of the detector, but convection currents inside the detector~\cite{Shayne's paper} dominate over the ion drift speed. Once the electrons reach the surface of the liquid, a second, much stronger electric field accelerates the electrons into the lower-density xenon gas. These energetic electrons will interact with the gas, creating more light that is again collected. This signal is variably called the S2, delayed, or ionization signal. The time difference between the S1 and S2 is the amount of time the electrons were drifing, and yields the depth or z coordinate of the interaction. The hit pattern on the top PMT array yields the (x,y) position of the event, as the PMTs directly above the S2 location will see more photons and produce a stronger signal. Figure~\ref{fig:idealized_event} shows schematically a typical event.
+%The operation of a dual-phase TPC is as follows. When something interacts with an atom (xenon, argon, etc) inside the detector, it will free a number of electrons, either directly or via the deexcitation of the nucleus after scattering inelastically. Some of these electrons will recombine instantly with the ion, producing scintillation light that is collected with the top and bottom PMT arrays. This signal is variably called the S1, prompt, or scintillation signal. An electric field is applied to the target volume, so some of the electrons will drift upwards towards the surface of the liquid. The ion would drift down and eventually collect electrons from the cathode mesh near the bottom of the detector, but convection currents inside the detector~\cite{Shayne's paper} dominate over the ion drift speed. Once the electrons reach the surface of the liquid, a second, much stronger electric field accelerates the electrons into the lower-density xenon gas. These energetic electrons will interact with the gas, creating more light that is again collected. This signal is variably called the S2, delayed, or ionization signal. The time difference between the S1 and S2 is the amount of time the electrons were drifing, and yields the depth or z coordinate of the interaction. The hit pattern on the top PMT array yields the (x,y) position of the event, as the PMTs directly above the S2 location will see more photons and produce a stronger signal. Figure~\ref{fig:idealized_event} shows schematically a typical event.
 
-\begin{figure}[htb]
-	\includegraphics[trim = 0 0 0 0, clip = true]{figures/chapter_three/idealized_event.pdf}
-	\caption{An idealized event inside a dual-phase TPC}
-	\label{fig:idealized_event}
-\end{figure}
+%\begin{figure}[htb]
+%	\includegraphics[trim = 0 0 0 0, clip = true]{figures/chapter_three/idealized_event.pdf}
+%	\caption{An idealized event inside a dual-phase TPC}
+%	\label{fig:idealized_event}
+%\end{figure}
 
 \section{System Overview}
 
-The XENON1T detector is composed of numerous subsystems, which will be discussed here in some detail.
+%The XENON1T detector is composed of numerous subsystems, which will be discussed here in some detail.
 
 \subsection{Water Cherenkov Muon Veto}
 
-The detector is housed in the center of a large tank of high-purity water, \SI{10}{m} in diameter and \SI{10}{m} in height. While the rock overburden at LNGS reduces the cosmogenic muon flux by many orders of magnitude~\cite{}, these muons typically have extremely high energies and take a long time to fully dissipate all their energy. Thus, muons can still regularly traverse the detector volume. However, by surrounding the detector with water, the muons will create Cherenkov radiation. An array of PMTs placed in the water can detect the light and a coincident event in the TPC itself tagged.
+%The detector is housed in the center of a large tank of high-purity water, \SI{10}{m} in diameter and \SI{10}{m} in height. While the rock overburden at LNGS reduces the cosmogenic muon flux by many orders of magnitude~\cite{}, these muons typically have extremely high energies and take a long time to fully dissipate all their energy. Thus, muons can still regularly traverse the detector volume. However, by surrounding the detector with water, the muons will create Cherenkov radiation. An array of PMTs placed in the water can detect the light and a coincident event in the TPC itself tagged.
 
 \subsection{Belt systems}
 
-Three systems of belts are mounted in the water tank around the detector to facilitate positioning radioactive sources around the TPC to perform various tasks like electron livetime calibrations and self-shielding measurements. Two of these systems have purely vertical travel (I-belts), and the third is capable of moving a source all the way underneath the detector along a secant (U-belt).
+%Three systems of belts are mounted in the water tank around the detector to facilitate positioning radioactive sources around the TPC to perform various tasks like electron livetime calibrations and self-shielding measurements. Two of these systems have purely vertical travel (I-belts), and the third is capable of moving a source all the way underneath the detector along a secant (U-belt).
 
 \subsection{Gas recirculation and purification}
 
-A large series of tubes exists to support the operation of the detector. The primary purpose of this system is to fill and empty the detector, to introduce radioactive sources into the detector for various calibrations, and to maintain the purity of the xenon in the detector by recirculating through a getter during the run.
+%A large series of tubes exists to support the operation of the detector. The primary purpose of this system is to fill and empty the detector, to introduce radioactive sources into the detector for various calibrations, and to maintain the purity of the xenon in the detector by recirculating through a getter during the run.
 
 \subsection{Electronics and DAQ}
 
-A variety of eletronics are housed in the service building for the purpose of running the DAQ systems. An array of CAEN V1724 ADC modules digitize the signal from the PMTs and feed the output into a small server cluster that acts as the Event Builder. This software functions as the trigger and writes events to disk. These files are then transferred above ground for processing and analysis.
+%A variety of eletronics are housed in the service building for the purpose of running the DAQ systems. An array of CAEN V1724 ADC modules digitize the signal from the PMTs and feed the output into a small server cluster that acts as the Event Builder. This software functions as the trigger and writes events to disk. These files are then transferred above ground for processing and analysis.
 
 \subsection{TPC and Umbilical}
 
-The TPC itself is housed inside the inner cryostat and is made of only the most radiopure materials available. The major components of the TPC are the copper field-shaping rings that help to ensure the uniformity of the drift field, the PTFE reflectors, the top and bottom PMT arrays, and the bell.
+%The TPC itself is housed inside the inner cryostat and is made of only the most radiopure materials available. The major components of the TPC are the copper field-shaping rings that help to ensure the uniformity of the drift field, the PTFE reflectors, the top and bottom PMT arrays, and the bell.
