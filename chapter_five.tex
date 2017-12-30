@@ -4,16 +4,21 @@
 
 The analysis of the ${}^{220}$Rn calibration data from XENON100~\cite{Aprile:2016pmc} revealed a buoyancy-driven convection pattern with a considerable $8\1{mm/s}$ fluid speed. A similar analysis from LUX~\cite{Malling:2014} of \Rn~in background data in revealed a pattern with the same features but a higher fluid speed of $3\1{cm/s}$. This was in stark contrast to the lack of convection that was observed in EXO-200~\cite{Albert:2015vma}.
 
-We will begin with a brief review of the relevant portion of the decay chain of primordial uranium, as shown in Figure~\ref{fig:useries}. \Pb~decays to the ground state of $^{214}$Bi with a branching ratio of $11.0\%$, and a fraction of these decays lie in the dark matter signal region of interest. This is the primary cause of background in this energy range.
-
-\begin{figure}[htb]
-    \includegraphics[width=\textwidth]{figures/rnveto/uranium_series}
-    \caption{A section of the decay chain of primordial ${}^{238}$U. Atoms of \Rn~emanate out of impurities in the metals used in detector construction and mix throughout the xenon volume. Low-energy decays of \Pb~that decay directly to the ground state of $^{214}$Bi are the leading cause of background in the dark matter ROI.}\label{fig:useries}
-\end{figure}
-
 \section{Convection in XENON1T}~\label{sec:convection}
 
 Given the similarities in the convection patterns between XENON100 and LUX and the differences between how those experiments inject xenon into the active volume, concrete predictions of what to expect in XENON1T are impossible to make. Conceptually, we might expect a similar single-cell pattern, or the increased detector size might allow the formation of two cells. Thus, it is important that any attempt to measure the convection be as agnostic possible, in order to avoid projecting expecations onto the data.
+
+To measure convection we require two decays out of a decay chain so that there is a meaningful correlation between decay vertices. We further impose a number of requirements on these two decays.
+\begin{enumerate}
+    \item One isotope in the chain must be capable of being injected into the detector and must mix throughout.
+    \item The two decays of interest must be easily identifiable and shouldn't confuse position reconstruction in any way.
+    \item The livetime of the second decay must be relatively short such that $v_{ave}\tau$ is larger than position reconstruction uncertainties, yet small enough such that within two or three livetimes it's still closer to its parent than any others (to facilitate easy matching).
+    \item Any further activity in the decay chain must either decay away quickly or be removable (decay is preferable), unless this measurement is done at the end of the detector's lifetime, in which case this can be relaxed.
+\end{enumerate}
+
+Requirememt $(1)$ excludes all decay chains without some gasseous form, or that cannot form some gasseous compount (conceptually similar to CH$_3$T or UF$_6$). Requirement $(2)$ points towards isotopes that primarily have an $\alpha$ mode, as a high-energy $\gamma$ will scatter multiple times, which makes position reconstruction difficult. Isotopes with $\beta$-decays are difficult to identify due to the lack of defining spectral features. Requirement $(3)$ can be fulfilled by reducing the injected activity, but this then means the measurement requires more time. Furthermore, if the livetime of the second isotope is not short compared to the timescale of convection, this also makes matching difficult, as the effects of curvature of the fluid streamlines will need to be incorporated.
+
+Pairings of radon and polonium are often ideal for this purpose.
 
 \subsection{$^{220}$Rn-$^{216}$Po}
 
@@ -26,7 +31,7 @@ Given how successful the pairing of $^{220}$Rn and $^{216}$Po were for XENON100 
 
 \subsection{$^{222}$Rn-$^{218}$Po}
 
-The fall-back option is to match \Po~decays to their parent \Rn~decays. This is a far less trivial endeavour, as the $3.1\1{min}$ half-life of \Po~is quite lengthy, so even at a very modest $1\1{mm/s}$ convection speed, half of all polonium atoms will move 10s of cm away from their parents.
+Another available option to match \Po~decays to their parent \Rn~decays. This is a far less trivial endeavour, as the $3.1\1{min}$ half-life of \Po~is quite lengthy, so even at a very modest $1\1{mm/s}$ convection speed, half of all polonium atoms will move 10s of cm away from their parents.
 
 The \Rn~background rate is $14\1{\mu Bq/kg}$, for a total activity in the active volume of $28\1{mBq}$. The population of \Rn~necessary to provide this activity is easily found via $R = \frac{\dd N}{\dd t} = -\lambda N$, where $R$ is the rate, $\lambda = \ln 2/t_{1/2}$ the decay constant, and $N$ the number of atoms. Thus, we find the \Rn~population size is about $13\,300\1{atoms}$. These will mix uniformly throughout the detector, giving an average distance between \Rn~atoms to be $3.9\1{cm}$. We apply the same calculations for \Po~and find an average population of $7.5\1{atoms}$ and an average spacing of some $47\1{cm}$. The small population of \Po~means the normal Poissonian fluctuations will have a more significant impact than on \Rn.
 

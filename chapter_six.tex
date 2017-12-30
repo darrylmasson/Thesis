@@ -2,6 +2,13 @@
 
 If it is possible to follow atoms of \Po~around the detector, the next step is to follow atoms further down the decay chain. If \Pb~atoms can be followed and their decays identified, these events can be removed from the analysis. As \Pb~is the dominant background source in the dark matter region of interest, this has the possibility to significantly boost the sensitivity of the experiment at a marginal cost in exposure. We exploit the fact that \Pb~is part of a larger decay chain, lending physical significance to the times and positions of its decays.
 
+We will begin with a brief review of the relevant portion of the decay chain of primordial uranium, as shown in Figure~\ref{fig:useries}. \Pb~decays to the ground state of $^{214}$Bi with a branching ratio of $11.0\%$, and a fraction of these decays lie in the dark matter signal region of interest. This is the primary cause of background in this energy range.
+
+\begin{figure}[htb]
+    \includegraphics[width=\textwidth]{figures/rnveto/uranium_series}
+    \caption{A section of the decay chain of primordial ${}^{238}$U. Atoms of \Rn~emanate out of impurities in the metals used in detector construction and mix throughout the xenon volume. Low-energy decays of \Pb~that decay directly to the ground state of $^{214}$Bi are the leading cause of background in the dark matter ROI.}\label{fig:useries}
+\end{figure}
+
 \section{Technique overview}
 
 While there is nothing about a \Pb~event that is easily identifiable, its parent isotopes (\Rn, \Po) and daughtber (\BiPo) can be identified in analysis with relative ease using alpha spectroscopy or the BiPo timing structure. This allows us to bookend the \Pb~event with events that are more easily identified. With this information, an algorithm resembling one for track reconstruction mightb be employed to improve the confidence with which \Pb~events are tagged by identifying the decays of the parents and daughtber and looking for the convection streamlines that connect them. The \Pb~decay must happen somewhere on that streamline between the \Pb~and \BiPo. A simple representation of this is shown in Figure~\ref{fig:rnveto_schematic} where displacement due to convection is normalized out.
