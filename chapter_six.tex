@@ -1,8 +1,8 @@
 \chapter{The radon veto}~\label{ch:rnveto}
 
-If it is possible to follow atoms of \Po~around the detector, the next step is to follow atoms further down the decay chain. If \Pb~atoms can be followed and their decays identified, these events can be removed from the analysis. As \Pb~is the dominant background source in the dark matter region of interest, this has the possibility to significantly boost the sensitivity of the experiment at a marginal cost in exposure. We exploit the fact that \Pb~is part of a larger decay chain, lending physical significance to the times and positions of its decays.
+If it is possible to follow atoms of \Po~around the detector, the next step is to follow atoms further down the decay chain. If \Pb~atoms can be followed and their decays identified, these events can be removed from the analysis. As \Pb~is the dominant background source in the dark matter region of intereste~\cite{Aprile:2015uzo}, this has the possibility to significantly boost the sensitivity of the experiment at a marginal cost in exposure. We exploit the fact that because \Pb~is part of a larger decay chain, the times and positions of its decays have physical significance to the atoms surrounding it.
 
-We will begin with a brief review of the relevant portion of the decay chain of primordial uranium, as shown in Figure~\ref{fig:useries}. \Pb~decays to the ground state of $^{214}$Bi with a branching ratio of $11.0\%$, and a fraction of these decays lie in the dark matter signal region of interest. This is the primary cause of background in this energy range.
+We will begin with a brief review of the relevant portion of the decay chain of primordial uranium, as shown in Figure~\ref{fig:useries}. \Pb~decays to the ground state of $^{214}$Bi with a branching ratio of $11.0\%$, and a fraction of these decays lie in the dark matter signal region of interest. This is the primary cause of background in this energy range~\cite{Aprile:2015uzo}.
 
 \begin{figure}[htb]
     \includegraphics[width=\textwidth]{figures/rnveto/uranium_series}
@@ -11,7 +11,7 @@ We will begin with a brief review of the relevant portion of the decay chain of 
 
 \section{Technique overview}
 
-While there is nothing about a \Pb~event that is easily identifiable, its parent isotopes (\Rn, \Po) and daughtber (\BiPo) can be identified in analysis with relative ease using alpha spectroscopy or the BiPo timing structure. This allows us to bookend the \Pb~event with events that are more easily identified. With this information, an algorithm resembling one for track reconstruction mightb be employed to improve the confidence with which \Pb~events are tagged by identifying the decays of the parents and daughtber and looking for the convection streamlines that connect them. The \Pb~decay must happen somewhere on that streamline between the \Pb~and \BiPo. A simple representation of this is shown in Figure~\ref{fig:rnveto_schematic} where displacement due to convection is normalized out.
+While there is nothing about a \Pb~event that is easily identifiable, its parent isotopes (\Rn, \Po) and daughtber (\BiPo) can be identified with relative ease using alpha spectroscopy or the BiPo timing structure~\cite{Aprile:2017fhu}. This allows us to bookend the \Pb~event with events that are more easily identified. With this information, an algorithm resembling one for track reconstruction can be employed to improve the confidence with which \Pb~events are tagged by identifying the decays of the parents and daughtber and looking for the convection streamlines that connect them. The \Pb~decay must happen somewhere on the streamline between the \Pb~and \BiPo~decays. A stylized representation of this is shown in Figure~\ref{fig:rnveto_schematic} where displacement due to convection is normalized out.
 
 \begin{figure}[htb]
     \includegraphics[width=\textwidth]{figures/rnveto/schematic}
@@ -33,7 +33,7 @@ The principle background to this Big Sphere method is that of false positives fr
 
 The Big Sphere method has a number of limitations. Looking in all directions rather than just along the convection streamlines wastes a large amount of exposure, and in cases where multiple low-energy events are observed within the sphere it is impossible to know which is due to the \Pb. At most one can be due to \Pb, yet without additional information it is impossible to determine which. This additional information is from convection. If an event is on known fluid streamlines originating from the \Po~decay vertex or converging to the \BiPo~vertex, it is more likely to be \Pb~than if it occurred far from those streamlines or on otherwise impossible paths.
 
-The computational cost of following these streamlines is non-trivial. It involves a numerical integration of a vector field, and doing this multiple times. Each \Rn~atom can potentially produce a low-energy \Pb~event, so streamlines around every \Rn~must be followed. At a decay rate of $\approx 2\,500\1{day^{-1}}$, a tonne-year of exposure will contain nearly $500\,000$ total \Rn~events. Streamlines from each of these events must be integrated for (on average) one hour, at sufficiently small timesteps to minimize integration errors.
+The computational cost of following these streamlines is non-trivial. It involves a numerical integration of a vector field, and doing this multiple times. Each \Rn~atom can potentially produce a low-energy \Pb~event, so streamlines around every \Rn~must be followed. At a decay rate of $\approx 2500\1{day^{-1}}$, a tonne-year of exposure will contain nearly $500\,000$ total \Rn~events. Streamlines from each of these events must be integrated for (on average) one hour, at sufficiently small timesteps to minimize integration errors.
 
 \section{Diffusion-limited case}
 
@@ -74,13 +74,13 @@ If we wish to reduce the contribution of \Pb~to the low-energy background to the
 To find the average cell volume we integrate the volume $V(t)$ with the probability density $P(t) = \lambda \exp -\lambda t$ to get
 
 \begin{equation}
-\left< V \rightb> = \int_0^{\infty} \dd t\,V(t) P(t) = \int_0^{\infty} \dd t\,\pi(r_0 + \sqrt{\pi Dt})^2(h_0 + \sqrt{\pi Dt})\lambda\exp -\lambda t
+\left< V \right> = \int_0^{\infty} \dd t\,V(t) P(t) = \int_0^{\infty} \dd t\,\pi(r_0 + \sqrt{\pi Dt})^2(h_0 + \sqrt{\pi Dt})\lambda\exp -\lambda t
 \end{equation}
 
 The result is
 
 \begin{equation}
-\left< V \rightb> = V_0 + a\sqrt{\chi} + b\chi + c\chi^{3/2}
+\left< V \right> = V_0 + a\sqrt{\chi} + b\chi + c\chi^{3/2}
 \end{equation}
 
 where:

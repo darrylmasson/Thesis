@@ -1,9 +1,12 @@
-TEX=pdflatex -interaction nonstopmode thesis.tex
-BIB=bibtex thesis.tex
+TEX=pdflatex -interaction nonstopmode thesis
+BIB=bibtex thesis
 
 
 pdf:
 	${TEX}
-	${BIB}||true
+	${BIB}
 	${TEX}
 	${TEX}
+
+clean:
+	rm -rf *.aux *.bbl *.lof *.lot *.log
