@@ -4,7 +4,7 @@ BIB=bibtex thesis
 
 pdf:
 	${TEX}
-	${BIB}
+	${BIB}||true
 	${TEX}
 	${TEX}
 
