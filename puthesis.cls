@@ -1,5 +1,5 @@
 %
-%  puthesis.cls  2012-12-01  Mark Senn  http://engineering.purdue.edu/~mark
+%  puthesis.cls  2017-04-15  Mark Senn  http://engineering.purdue.edu/~mark
 %
 %  INDEX: Purdue University thesis document class
 %
@@ -13,13 +13,14 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{puthesis}[2012/11/30 Purdue thesis class]
+\ProvidesClass{puthesis}[2017/03/06 Purdue thesis class, version 1.9.23]
 \usepackage{ifthen}
 \newcommand{\ifthen}[2]{\ifthenelse{#1}{#2}{}}
 \usepackage{endnotes}
 \usepackage{pulongtable}
 \usepackage{rotating}
 \usepackage{lscape}
+\usepackage[letterpaper]{geometry}
 
 \makeatletter
 
@@ -129,7 +130,7 @@
 \DeclareOption{astron}{\set@@optionbibstyle{astron}}
 \DeclareOption{chicago}{\set@@optionbibstyle{chicago}}
 \DeclareOption{ieee}{\set@@optionbibstyle{ieee}}
-\DeclareOption{ieeetr}{\set@@optionbibstyle{ieeetr}}
+\DeclareOption{IEEEtran}{\set@@optionbibstyle{IEEEtran}}
 \DeclareOption{jfm}{\set@@optionbibstyle{jfm}}
 \DeclareOption{jfm2}{\set@@optionbibstyle{jfm2}}
 \DeclareOption{kluwer}{\set@@optionbibstyle{kluwer}}
@@ -179,7 +180,7 @@
 \DeclareOption{nonumberallvolumes}{\setboolean{number@@all@@volumes}{false}}
 
 %\DeclareOptions*(\PassOptionsToClass{\CurrentOption}{report}}
-  % Used to count number of citation/bibliography styles used.
+% Used to count number of citation/bibliography styles used.
 \setcounter{@@tcount}{0}
 \ProcessOptions
 \newcommand{\IW}[1]{\immediate\write16{#1}}
@@ -225,7 +226,7 @@
     \IW{++++astron}
     \IW{++++chicago}
     \IW{++++ieee}
-    \IW{++++ieeetr}
+    \IW{++++IEEEtran}
     \IW{++++jfm}
     \IW{++++jfm2}
     \IW{++++kluwer}
@@ -264,12 +265,12 @@
 %    \IW{                                    \string\\||//}
 %    \IW{                                     \string\\//}
 %    \IW{+----------------------------------------------------------------------------+}
-%    \IW{| This document is using the 2012/11/30 version of puthesis.cls.  It was     |}
+%    \IW{| This document is using the 2017/03/06 version of puthesis.cls.  It was     |}
 %    \IW{| probably read in because you used \string\documentclass[...]{puthesis}.           |}
 %    \IW{|                                                                            |}
 %    \IW{| Only the latest version of this file available from                        |}
 %    \IW{|     http://engineering.purdue.edu/\string~mark/puthesis                               |}
-%    \IW{| is supported.   Put it in the same subdirectory as your thesis.            |}
+%    \IW{| is supported.  Put it in the same subdirectory as your thesis.             |}
 %    \IW{|                                                                            |}
 %    \IW{| This file may be being read from your thesis directory or somewhere else.  |}
 %    \IW{| To find out which is being used search for ``puthesis.cls'' near the       |}
@@ -289,7 +290,7 @@
 
 \def\AppendixFigure{\relax}
 \def\AppendixTable{\relax}
-\def\@@bibname{LIST OF REFERENCES}
+\def\@@bibname{REFERENCES}
 \def\@@deptbibstyle{unsrt}
 \def\@@coversheetspace{\vfill}
 \def\@@evenfoot{}
@@ -406,7 +407,7 @@
   }
 \ifthen{\equal{ece}{\@@dept}}
   {
-    \def\@@deptbibstyle{ieeetr}
+    \def\@@deptbibstyle{IEEEtran}
     \renewcommand*\l@section{\@dottedtocline{1}{\bigtocskip}{1.5em}{2.3em}}
     \renewcommand*\l@subsection{\@dottedtocline{2}{\bigtocskip}{3.8em}{3.2em}}
     \renewcommand*\l@subsubsection{\@dottedtocline{3}{\bigtocskip}{7.0em}{4.1em}}
@@ -525,27 +526,27 @@
   }
 \ifthen{\equal{chem}{\@@dept}}
   {
-      % The vertical spacing between floats appearing either at the
-      % top or at the bottom of a page for double column floats in
-      % two-column page format.
+    % The vertical spacing between floats appearing either at the
+    % top or at the bottom of a page for double column floats in
+    % two-column page format.
     \setlength{\dblfloatsep}{36pt}
-      % The vertical spacing between floats and text, for both top
-      % and bottom floats for double column floats in two-column page
-      % format.
+    % The vertical spacing between floats and text, for both top
+    % and bottom floats for double column floats in two-column page
+    % format.
     \setlength{\dbltextfloatsep}{36pt}
-      % The vertical spacing between floats appearing either at the
-      % top or at the bottom of a page.
+    % The vertical spacing between floats appearing either at the
+    % top or at the bottom of a page.
     \setlength{\floatsep}{36pt}
-      % The vertical spacing above and below a float that appears in
-      % the middle of a text page with the h placement argument.
+    % The vertical spacing above and below a float that appears in
+    % the middle of a text page with the h placement argument.
     \setlength{\intextsep}{36pt}
     \def\@@makechapterhead#1{\thechapter. #1}
     \def\@@makechapterheadspacea{\vspace*{0.7truein}}
     \def\@@makechapterheadspaceb{\vspace*{36pt}}
     \def\@@makeschapterheadspacea{\vspace*{0.7truein}}
     \def\@@makeschapterheadspaceb{\vspace*{36pt}}
-      % The vertical spacing between floats and text, for both top
-      % and bottom floats.
+    % The vertical spacing between floats and text, for both top
+    % and bottom floats.
     \setlength{\textfloatsep}{36pt}
   }
 \ifthen{\equal{cs}{\@@dept}}
@@ -764,6 +765,36 @@
         {\setcounter{page}{2}}
     }
   }
+\newenvironment{statement}%
+  {%
+    \newpage
+    \chapter*%
+    {%
+      THE PURDUE UNIVERSITY GRADUATE SCHOOL\\
+      STATEMENT OF
+      \ifthen{\equal{bypass}{\@@type}}{MASTER'S BYPASS}%
+      \ifthen{\equal{dissertation}{\@@type}}{DISSERTATION}%
+      \ifthen{\equal{prelim}{\@@type}}{PRELIMINARY REPORT}%
+      \ifthen{\equal{thesis}{\@@type}}{THESIS}%
+      ~APPROVAL%
+    }
+    \def\entry##1##2%
+    {%
+      \noindent##1\par
+      \noindent\hspace*{0.5in}##2\par
+    }
+    \def\approvedby##1##2%
+    {%
+      \mbox{}\par
+      \noindent{\bfseries Approved by:}\par
+      \noindent\hspace*{0.5in}##1\par
+      \noindent\hspace*{1in}##2\par
+    }
+    \mbox{}\par
+  }
+  {%
+  }
+  
 \newenvironment{dedication}%
   {%
     \newpage
@@ -879,9 +910,9 @@
       #5\nobreak
       \leaders\hbox{$\m@th \mkern \@dotsep mu.\mkern \@dotsep mu$}\hfill
       \nobreak
-      \renewcommand{\@pnumwidth}{1.55em}
-      \setlength{\@@tlength}{\@pnumwidth}
-      \settowidth{\@@ulength}{\reset@font \rm #6}
+      \renewcommand{\@pnumwidth}{1em}%
+      \setlength{\@@tlength}{\@pnumwidth}%
+      \settowidth{\@@ulength}{\reset@font \rm #6}%
       \ifdim \@@ulength>\@@tlength
         \hbox to\@@ulength{\hfil\reset@font \rm #6}\par
       \else
@@ -1274,7 +1305,7 @@
 \ifthen{\equal{ece}{\@@dept}\or \equal{hsci}{\@@dept}}
   {\renewcommand{\figurename}{Fig.}}
 \renewcommand{\fnum@figure}{\figurename~\thefigure.}
-\renewcommand{\fnum@table}{\tablename~\thetable}
+\renewcommand{\fnum@table}{\tablename~\thetable.}
 \newboolean{@@centercaption}
 \renewcommand{\caption}{%
   \setboolean{@@centercaption}{true}
@@ -1342,14 +1373,14 @@
 
 \ifthen{\equal{abbrv}{\@@bibstyle}}
   {
-    \renewcommand{\bibname}{{\normalsize\rm LIST OF REFERENCES}}
+    \renewcommand{\bibname}{{\normalsize\rm REFERENCES}}
     \bibliographystyle{abbrv}
   }
 
 \ifthen{\equal{abbrvnat}{\@@bibstyle}}
   {
     \usepackage[sort]{natbib}
-    \renewcommand{\bibname}{{\normalsize\rm LIST OF REFERENCES}}
+    \renewcommand{\bibname}{{\normalsize\rm REFERENCES}}
     \bibliographystyle{abbrvnat}
   }
 
@@ -1371,7 +1402,7 @@
   {
     \usepackage{cite}
     \usepackage{revtex}
-    \renewcommand{\bibname}{{\normalsize\rm LIST OF REFERENCES}}
+    \renewcommand{\bibname}{{\normalsize\rm REFERENCES}}
     \bibliographystyle{aip}
   }
 
@@ -1417,10 +1448,10 @@
     \bibliographystyle{ieee}
   }
 
-\ifthen{\equal{ieeetr}{\@@bibstyle}}
+\ifthen{\equal{IEEEtran}{\@@bibstyle}}
   {
     \usepackage{cite}
-    \bibliographystyle{ieeetr}
+    \bibliographystyle{IEEEtran}
   }
 
 \ifthen{\equal{jfm}{\@@bibstyle}}
@@ -1461,7 +1492,7 @@
 \ifthen{\equal{plainnat}{\@@bibstyle}}
   {
     \usepackage{natbib}
-    \renewcommand{\bibname}{{\normalsize\rm LIST OF REFERENCES}}
+    \renewcommand{\bibname}{{\normalsize\rm REFERENCES}}
     \bibliographystyle{plainnat}
   }
 
@@ -1482,7 +1513,7 @@
 \ifthen{\equal{unsrtnat}{\@@bibstyle}}
   {
     \usepackage{natbib}
-    \renewcommand{\bibname}{{\normalsize\rm LIST OF REFERENCES}}
+    \renewcommand{\bibname}{{\normalsize\rm REFERENCES}}
     \bibliographystyle{unsrtnat}
   }
 
@@ -1552,8 +1583,6 @@
     \global\@nobreakfalse
   \endgroup
 }
-\newcommand{\num}[1]{\ensuremath{#1}}
-\newcommand{\ten}[1]{\ensuremath{{}\cdot 10^{#1}}}
 
 \setcounter{topnumber}{10}
 \renewcommand{\topfraction}{1}

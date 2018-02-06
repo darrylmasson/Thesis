@@ -1,6 +1,6 @@
 % Thesis root file. yay.
 
-\documentclass[phys,dissertation]{puthesis}
+\documentclass[phys,dissertation,unsrt]{puthesis}
 
 \usepackage{amsmath}
 \usepackage{subfigure}
@@ -8,12 +8,17 @@
 \usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{natbib}
+\usepackage{url}
+
+\linespread{1.1}
+
 \sloppy
 
 % Put % at the end of the last line to avoid getting an extra space
 % in the abstract.
 \title{
-	The Search for Dark Matter \\%
+	The Search for Dark Matter \\
 	with XENON1T%
 }
 
@@ -27,7 +32,7 @@
 
 \input{defs}
 
-%\includeonly{front, chapter_one}
+%\includeonly{chapter_xe1t}
 
 \begin{document}
 
@@ -42,11 +47,14 @@
 % XENON1T
 \include{chapter_xe1t}
 
+% psd paper
+\include{chapter_psd}
+
+% neutron generator
+\include{chapter_ng}
+
 % rn220 source
 \include{chapter_rnsource}
-
-% UA'(1)
-\include{chapter_ua1}
 
 % convection
 \include{chapter_convection}
@@ -54,17 +62,14 @@
 % radon veto
 \include{chapter_rnveto}
 
-% psd paper
-\include{chapter_psd}
-
-% neutron generator
-\include{chapter_ng}
+% UA'(1)
+%\include{chapter_ua1}
 
 %\include{recommendations}
 
 \appendices
 
-\bibliographystyle{plain}
+%\bibliographystyle{apacite}
 \bibliography{bibliography}
 
 %\include{vita}

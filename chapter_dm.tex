@@ -1,117 +1,176 @@
-% chapter one: dark matter?
+% dark matter, v1.0
 
 \chapter{The Case for Dark Matter}
 
+\paragraph{Abstract} In this chapter we outline the evidence supporting the existence of dark matter, provide a brief discussion of possible models describing what dark matter might be, and review detection schemes.
+
 \section{Evidence for Dark Matter}
 
-%For most of the last century evidence for the existence of dark matter has been gathering from various sources. Initially, evidence was primarily from astrophysical observations of the behaviour of various structures observed in the universe. However, once cosmology became a predictive tool, more stringent requirements could be placed on the unseen parts of the universe. We will begin by evaluating the astrophysical and cosmological evidences for the existence of dark matter, and discussing some proposed models.
-
-%The first indications that something was amiss in astronomy was from observations made of what was then the Andromeda Nebula by Heber Curtis in 1917~\cite{}. Based on these observations, Curtis concluded that the Nebula was actually an entirely separate galaxy at some immense distance from the Milky Way. In the 1920s Edwin Hubble showed conclusively that the universe was much more than just our Milky Way galaxy~\cite{Hubble:1929}. The next logical step was for astronomers to study this recently-discovered rest of the universe. Very soon it became clear that there was a great deal about which we knew very little.
+For most of the last century evidence for the existence of dark matter has been gathering from various sources. In the 1920s Edwin Hubble showed conclusively that the universe was much more than just our Milky Way galaxy~\cite{Hubble:1929}. Very soon it became clear that the universe was a very large place that we understood only poorly.
 
 \subsection{Galactic Rotation curves}
 
-%In the early 17th century Johannes Kepler published his three laws of planetary motion \cite{Kepler}. Kepler's Third law gives a relationship between an orbit's period, semimajor axis (radius, if circular), and enclosed mass. Assuming the mass distribution is a function purely of radius, we can define
-%\begin{equation} \label{eq:mass_distribution}
-%M(r) = \int_0^r \n{d}^3r'\, \rho (r') = 4\pi\,\int_0^r \n{d}r'\, r'^{2} \rho(r')
-%\end{equation}
-%We can do a bit of manipulation on the expression Kepler found to give us a relationship relating the expected orbital velocity of an object in a galaxy as a function of its distance from the galactic core,
-%\begin{equation} \label{eq:rotation_curve}
-%v(r) = \sqrt{\frac{GM(r)}{r}}
-%\end{equation}
+In the early 17th century Johannes Kepler published his three laws of planetary motion~\cite{Kepler}. Kepler's Third law is easily derived with the help of Newtonian gravitation and centripetal motion:
+\begin{equation} \label{eq:rotation_curve}
+\frac{a^3}{T^2} = \frac{GM}{4\pi^2} \Longrightarrow v(r) = \sqrt{\frac{GM}{r}}
+\end{equation}
+where $a$ is the orbital semimajor axis, $T$ the orbital period, $G$ the gravitational constant, $M$ the mass of the central body, and $v$ the orbital speed (assuming a circular orbit). If we assume the mass distribution is a function purely of radius, we can define
+\begin{equation} \label{eq:mass_distribution}
+M(r) = \int_0^r \dd^3r^{\prime}\, \rho (r^{\prime}) = 4\pi\,\int_0^r \dd r^{\prime}\, r^{\prime 2} \rho(r^{\prime})
+\end{equation}
+and generalize the expression Kepler found to give us a relationship relating the expected orbital velocity of an object in a galaxy as a function of its distance from the galactic core.
 
-%Armed with~\eqref{eq:mass_distribtion} and~\eqref{eq:rotation_curve}, we can calculate $M(r)$ by observing a galaxy with telescopes and assuming some stellar mass distribution, and then make some prediction for $v(r)$. Using Doppler-shifted lines of stars or dwarf galaxies, the orbital velocities can be measured and compared to the prediction from the mass distribution. The predicted and measured rotation speeds bear only marginal resemblances to each other, as seen in figure~\ref{fig:rotation_curve}, an image of the Triangulum galaxy (M33).
+Armed with equations~\eqref{eq:mass_distribution} and~\eqref{eq:rotation_curve}, we can calculate $M(r)$ by observing a galaxy with telescopes and assuming some stellar mass distribution, and then make some prediction for $v(r)$. Using Doppler-shifted lines of stars or dwarf galaxies, the orbital velocities can be measured and compared to the prediction from the mass distribution, as seen in figure~\ref{fig:rotation_curve}, an image of the Triangulum galaxy (M33)~\cite{Corbelli:1999af}.
 
-%\begin{figure}[h]
-%	\includegraphics{figures/chapter_one/rotation_curve.png}
-%	\caption{Rotation curve of M33, from~\cite{Corbelli:1999af}}
-%	\label{fig:rotation_curve}
-%\end{figure}
+\begin{figure}[htbp]
+\centering
+    \includegraphics[width=0.8\textwidth]{figures/dm/m33_rotation}
+    \caption{Rotation curve of M33, from~\cite{Corbelli:1999af}. The measured rotation speeds cannot be explained by the observed distribution of stars and dust and require the addition of a hidden source of mass to reproduce the observations.}\label{fig:rotation_curve}
+\end{figure}
 
-%Clearly, something is wrong with the predictions. If we assume that stars, gas, dust, and other objects visible with telescopes are all there is to a galaxy, then at large distances from the galactic center it will increasingly appear like a point mass, giving the familiar relationship $v(r) ~ r^{-1/2}$ that is Kepler's third law. In the bulge in the center of the galaxy, we see the speed increases roughly linearly with the radius, indicating a mass distribution proportional to $r^3$, or a constant density profile. However, the data clearly shows that at large $r$, the velocity is approximately constant, indicating a mass distribution proportional to $r$ or a density profile proportional to $1/r^2$. If there is something in the galaxy that would produce this distribution of mass it doesn't show up in any telescope. Additionally, the stars near the edge of the galaxy are well above the predicted escape velocity $v_{\n{esc}} = \sqrt{2}v_{\n{circ}}$, and as galaxies are stable over astronomical periods of time, they cannot be filled with objects exceding the escape velocity.
-
-%This data indicate one of two things. Either Kepler's Law and the Newtonian gravity upon which it is based are invalid on galactic distance scales, or there is some hidden mass or dark matter filling a galaxy. Supposing the first case to be true, the recourse would be to introduce modifications to gravity that only act over long distances, which has been done with some limited success~\cite{Milgrom:1983,Moffat:2005si,Worsley:2014}. In the second case, some distribution of mass must be inferred that has a negligible contribution in the inner parts of the galaxy but becomes dominant at large radii. A number of distributions have been proposed~\cite{NGW:1997,Merritt:2006} which address this rotation curve problem.
+If we assume that stars, gas, dust, and other objects visible with telescopes are the dominant components of the galaxy, then at large distances from the galactic center it will increasingly appear like a point mass, giving the familiar relationship $v(r) \sim r^{-1/2}$ that is Kepler's third law. In the bulge in the center of the galaxy, we see the speed increases roughly linearly with the radius, while at large radii the velocity is approximately constant or increasingly slowly. However, the mass required to produce this effect is not evident in any telescope. Additionally, the stars near the edge of the galaxy are well above the predicted escape velocity $v_{\n{esc}} = \sqrt{2}v_{\n{circ}}$. Galaxies are stable over astronomical periods of time, so they cannot be filled with objects exceding the escape velocity. From this, we can propose some mass distribution that has a negligible contribution in the inner parts of the galaxy but becomes dominant at large radii~\cite{Navarro:1995iw,Graham:2005xx}.
 
 \subsection{Galaxy cluster dynamics}
 
-%One prediction of Einstein's Theory of General Relativity is that any concentration of matter and energy will act as a lens for passing photons by distorting spacetime~\cite{}. When lensing is observed, forward modelling can be performed to estimate the distribution and amount of matter present.
+\subsubsection{Virial theorem}
+
+The observations of the dynamics of clusters of galaxies yields fairly clear indication that dark matter must form a significant contribution to the mass of a galaxy cluster. When observations are made of clusters other than our own Local Group, a very large mass of diffuse hydrogen is observed in the space between galaxies. This hot gas radiates x-rays (and thus is often called hot x-ray gas), and from its luminosity both the temperature and mass can be measured. The extremely high temperatures observed result from basic energy conservation. As the gas falls into the cluster's gravitational potential well, it gains kinetic energy, which is equivalent to temperature. The temperature of the gas thus gives an indication of the depth of the potential well. Applying the Virial theorem (2K + U = 0)~\cite{Claussius:1870} to the cluster, the kinetic energies of the component galaxies can be measured and compared to the observed potential energy. In both cases, the required potential well is much deeper than could be formed from merely the hot gas and the galaxies themselves, despite the fact that there is an order of magnitude more mass in gas than in galaxies. Indeed, the extra mass required to make the system behave is an order of magnitude greater than the mass that is observed.
 
 \subsubsection{Bullet cluster}
-%\subsubsection{Strong lensing}
 
-%Provided the alignment of the stars is correctly and the foreground lensing object is sufficiently massive, the image of a distant object can be lensed strongly around the foreground object, resulting in multiple images or severe distortions. Strong lensing tends to be easy to identify (for instance, most galaxies when viewed edge-on don't bear strong resemblances to a banana). In all cases, the observed distortions require much more mass than can be observed with telescopes.
+The Bullet Cluster (1E 0657-558) is an excellent example of both galaxy cluster dynamics and weak lensing, and also furnishes additional information on dark matter. Figure~\ref{fig:bullet_cluster} is a composite image from Hubble Space Telescope (HST), Chandra X-ray Observatory, and Magellan. The pink is the hot x-ray gas (seen by Chandra), and forms the majority of the baryonic mass of the cluster. The powerful shock produced during the collision is clearly seen in the subcluster on the right, giving indications of the speed of the collision, and also the mass of that subcluster. The blue regions, centered on the visible galaxies, show the weak lensing centers.
 
-%\subsubsection{Weak lensing}
+\begin{figure}[htbp]
+\centering
+   \includegraphics{figures/dm/bullet_cluster}
+   \caption{The Bullet Cluster of galaxies, from~\cite{bullet}. Two subclusters passed through each other without significantly affecting the constituent galaxies, however the hot x-ray gas (pink) experienced significant disruption and was pulled away. Despite the majority of visible mass being contained within the gas, a lensing study reveals that the lensing centers (blue) are still centered on the galaxies, indicating that the intracluster gas, while dominating the baryonic mass, is not a major component of the total cluster mass, and also that this invisible matter does not experience significant self-interactions~\cite{Kahlhoefer:2013dca}.}\label{fig:bullet_cluster}
+\end{figure}
 
-%In cases where the lensing object is not sufficiently dense or massive to create obvious strong lensing, weak lensing can still be observed. Weak lensing can be measured using statistical methods by creating an average shape of a galaxy in the field of view and calculating some distortion parameter. A distribution of distortion can be created, which will indicate where the greatest concentrations of mass are.
-
-%The observations of the dynamics of clusters of galaxies yields fairly clear indication that dark matter must form a significant contribution to the mass of a galaxy cluster. When observations are made of clusters other than our own Local Group, a good deal of hot gas is observed. This hot gas radiates x-rays (and thus is often called hot x-ray gas), and from its luminosity both the temperature and mass can be measured. The extremely high temperatures observed are from basic energy conservation. As the gas falls into the cluster's gravitational potential well, it gains kinetic energy, which, for a gas, is equivalent to temperature. The temperature of the gas thus gives an indication of the depth of the potential well. Applying the Virial theorem (2K + U = 0) to the cluster, the kinetic energies of the component galaxies can be measured and compared to the observed potential energy. In both cases, the required potential well is much deeper than could be formed from merely the hot gas and the galaxies themselves, despite the fact that there is an order of magnitude more mass in gas than in galaxies. Indeed, the extra mass required to make the system behave is an order of magnitude greater than the mass that is observed.
-
-%The Bullet Cluster (1E 0657-558) is an excellent example of both galaxy cluster dynamics and weak lensing, and also furnishes additional information on dark matter. Figure~\ref{fig:bullet_cluster} is a composite image of a Hubble Space Telescope (HST) image and a Chandra X-ray Observatory image. The pink is the hot x-ray gas (seen by Chandra), and forms the majority of the baryonic mass of the cluster. The powerful shock produced during the collision is clearly seen in the subcluster on the right, giving indications of the speed of the collision, and also the mass of that subcluster.
-
-%\begin{figure}[h]
-%	\includegraphics{figures/chapter_one/bullet_cluster.png}
-%	\caption{The Bullet Cluster of galaxies, from~\cite{bullet}}
-%	\label{fig:bullet_cluster}
-%\end{figure}
-
-%A good deal of information can be gleaned from a careful inspection of figure~\ref{fig:bullet_cluster}. The first thing to note is the separation of two populations of baryonic matter. In the visible wavelengths we observe the two subclusters with their galaxies largely undisturbed by their transit. The distance between galaxies in a cluster is larger than the characteristic size of a galaxy, thus a cluster is dominated by the star-less space between galaxies. When two galaxy clusters collide the chance of a direct collision between to galaxies is small, as the gaps for galaxies to slot between each other are larger than the galaxies themselves. Thus, we see that the two subclusters have been largely unaffected by their passage.
-
-%However, a respectable galaxy cluster contains far more than just galaxies. The majority of the mass comes from free hydrogen in the form of the hot x-ray gas. When two populations of gas pass through each other, they interact differently from galaxies. The gas interacts significantly as the two clouds pass through each other, which slows the gas down. Thus, as the two subclusters move away from each other post-collision, the x-ray gas will have lost some kinetic energy due to its interactions and will not leave the collision center as quickly as the stars and galaxies. This leads to a separation of the galaxies from the gas.
-
-%However, if a weak lensing study is performed on this cluster, it indicates that the lensing centers, and thus the greatest concentrations of mass, are centered around the galaxies, not the gas. This at first presents a dilemma, as the luminosities observed require that there be much more mass in gas than in galaxies. How, then, could the lensing be centered around somewhere the mass isn't? The answer is that there must be some hidden mass that accompanies each subcluster. Furthermore, we can note that this hidden mass didn't separate out with the gas, indicating that it doesn't experience significant self-interactions.
+When the two subclusters passed through each other, the constituent galaxies passed each other with minimal interaction. The two volumes of intracluster gas, being large balls of plasma, experienced significant drag, and the gas separated from the galaxies. A weak lensing study reveals that the lensing centers are still located around the galaxies, even though the mass of the intracluster gas greatly exceeds that of the stars and dust. From this we conclude that the majority of the mass of the subclusters is contained in this invisible matter, and also that it does not experience significant self-interactions~\cite{Kahlhoefer:2013dca}.
 
 \subsection{Gravitational lensing}
 
+One prediction of Einstein's Theory of General Relativity is that any concentration of matter and energy will act as a lens for passing photons by distorting spacetime~\cite{Einstein:1936}. The amount and manner of lensing observed indicates the amount of matter present.
+
+\subsubsection{Strong lensing}
+
+Strong lensing is when images of background galaxies experience significant distortion or form multiple images by foreground objects. A good example is Einstein's Cross (QSO 2237+0305)~\cite{einstein_cross}, as shown in Figure~\ref{fig:einstein_cross}, where a distant quasar forms four images around a foreground galaxy.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/dm/einstein_cross}
+    \caption{The Einstein's Cross, QSO 2237+0305. A distant quasar forms multiple images when lensed around a foreground galaxy. Image from HST~\cite{einstein_cross}.}\label{fig:einstein_cross}
+\end{figure}
+
+\subsubsection{Weak lensing}
+
+In cases where the lensing object is not sufficiently dense or massive to create obvious strong lensing, weak lensing can still be observed. Weak lensing can be measured using statistical methods by creating an average shape of a galaxy in the field of view and calculating some distortion parameter~\cite{Bartelmann:1999yn}. A distribution of distortion can be created, which will indicate where the greatest concentrations of mass are. The analysis shows that the amount of mass visible is insufficient to account for the amount of lensing observed.
+
 \subsection{Structure formation}
+
+Millenium~\cite{Springel:2005nw}, Illustris~\cite{Genel:2014lma,Vogelsberger:2014dza,Sijacki:2014yfa}, IllustrisTNG~\cite{Pillepich:2017jle},
 
 \subsection{Cosmic Microwave Background (CMB)}
 
-%Pensias and Wilson were the first to turn a sensitive microwave telescope to the skies \cite{PenWil:1965a,PenWil:1965b}, and their discovery earned them the Nobel Prize in Physics in 1978. Now, the best measurements of the CMB come from satellites like WMAP and Planck. The basic data taken are nearly totally featureless and isotropic to a few parts per million as shown in Fig.~\ref{fig:cmb}a. If the average temperature of 2.7K is subtracted, a dipole term appears arising from the Sun's movement around the galaxy (Fig.~\ref{fig:cmb}b). In a sense, this indicates a favored reference frame for our universe, that is, one in which the observer is at rest relative to the CMB. If this dipole term is subtracted, the galactic contributions become clear (Fig.~\ref{fig:cmb}c). Subtracting this yields a density map of the universe when the CMB decoupled from the baryonic matter (about 380,000y after the Big Bang, Fig.~\ref{fig:cmb}d). Certain regions contain a slightly higher density than others, indicating a greater concentration of stuff. This temperature map can be expanded in the spherical harmonics and a power spectrum plotted. A cosmolical model is then fitted to this spectrum, and from this model various parameters of our universe can be extracted.
+Pensias and Wilson were the first to turn a sensitive microwave telescope to the skies~\cite{Penzias:1965a,Penzias:1965b}, and their discovery earned them the Nobel Prize in Physics in 1978. The best measurements of the CMB come from satellites like Wilkinson Microwave Anisotropy Probe (WMAP)~\cite{Bennett:2012zja} and Planck~\cite{Ade:2015xua}, and are (at face value) nearly totally featureless and isotropic to a few parts per million as shown in Fig.~\ref{fig:cmb}a. After the subtraction of the average, dipole, and galactic contributions, we get Fig.~\ref{fig:cmb}b.
+
+\begin{figure}[htb]
+    \begin{tabular}{cc}
+    \includegraphics[width=0.5\textwidth]{figures/dm/cmb0} & \includegraphics[width=0.5\textwidth]{figures/dm/cmb3} \\
+    \end{tabular}
+    \caption{(Left) The cosmic microwave background radiation as measured by WMAP~\cite{Bennett:2012zja}. The temperature of the universe is flat and lacking any features above the a few parts per million. (Right) After subtracting the contributions from various backgrounds, we see the temperature profile of the universe at the moment when photons decoupled from baryons.}\label{fig:cmb}
+\end{figure}
+
+Certain regions radiate at a slightly higher temperature, indicating a greater concentration of the soup of baryons and photons in the early universe. These differences arose due to quantum fluctuations during the early expansion. This temperature map can be expanded in the spherical harmonics and a power spectrum plotted. Various cosmological models can be tested by fitting to this spectrum, as shown in Figure~\ref{fig:cmb_ps}.
+
+\begin{figure}[htb]
+\centering
+    \includegraphics[width=0.8\textwidth]{figures/dm/planck2015_cmb}
+    \caption{The power spectrum of the spherical harmonic expansion of the CMB. The lack of damping on the second peak indicates significant contributions to the universe from non-baryonic matter.}\label{fig:cmb_ps}
+\end{figure}
+
+The model with the best fit is $\Lambda$CDM, which at its simplest is a six-parameter model that describes the universe as filled with cold (non-relativistic) dark matter (CDM) with addtional contributions from dark energy ($\Lambda$)~\cite{Riess:1998cb}. From the results extracted from the fit we learn a variety of things about the universe. Of key importance are the various contributions to the total energy content of the universe. The baryonic fraction $\Omega_b$ is merely $0.049$, the dark matter fraction $\Omega_{DM}$ $0.265$, and the dark energy fraction $\Omega_{\Lambda}$ $0.686$. Thus, the majority of the universe is not of a baryonic nature.
 
 \subsection{Big Bang Nucleosynthesis (BBN)}
 
-%About a minute after the Big Bang, the universe had cooled sufficiently to allow nuclei to form and not be immediately broken apart due to the high ambient temperature. A good deal had happened in this minute, including the annihilation of all the antimatter with almost all the matter, creating the ocean of photons that is now the cosmic microwave background. It will prove convenient to define $\eta$ as the ratio between the number of baryons and the number of photons, or, as the number of photons is large, $\eta_{10} = 10^{10}\eta$. Neutrons and protons had just fallen out of numerical equilibrium due to their small difference in mass, and now existed in a ratio of about 1 neutron per 7 protons. Neutrons and protons first combined to make deuterium, then as the deuterium abundance increased, deuterium fused with deuterium to produce tritium and then with tritium to produce $^4$He. This epoch continued for just under half an hour, until expansion had driven particles far enough apart that collisions became infrequent and the temperature had decreased below the energy necessary to overcome the Coulomb repulsion between nuclei. Now, nearly all of the universe's neutrons were in helium due to its stability. Of the remaining few neutrons, most were in deuterium, with a few in $^7$Li. Due to its stability, the population of $^4$He depends very little on $\eta_{10}$, but deuterium is not strongly bound, so a smaller $\eta_{10}$ (more photons) means fewer deuterium nuclei. By measuring the primordial abundance of deuterium, this will admit a value of $\eta_{10}$ which will in turn indicate what percentage of the universe was baryons at this epoch.
+Within a minute after the Big Bang, the universe had cooled sufficiently to allow nuclei to form and not be immediately broken apart due to the high ambient temperature. Neutrons and protons had just fallen out of numerical equilibrium due to their small difference in mass, and now existed in a ratio of about 1 neutron per 7 protons. Neutrons and protons first combined to make deuterium, then as the deuterium abundance increased, deuterium fused with deuterium to produce tritium and then with tritium to produce $^4$He. This epoch continued for just under half an hour, until expansion had driven particles far enough apart that collisions became infrequent and cooling robbed the collisions of sufficient energy to initiate the reactions. At this point, the majority of the universe's neutrons were in helium due to its stability, and of the few remaining, most were in deuterium. Due to the weak binding of deuterium, a universe with more photons will mean fewer deuterium nuclei survive this epoch. Due to its stability, the population of $^4$He depends very little on the photon density. By measuring the primordial abundance of deuterium, this will admit a value of the ratio between nuclei and photons, which will in turn indicate what percentage of the universe was baryonic in this epoch.
 
-\section{Dark Matter in the universe today}
+By comparing the prediction from theory with measurements (Ref~\cite{Steigman:2007xt}, see also Figure~\ref{fig:bbn}), we can place a stringent requirement on the baryonic density of the universe to $\eta = (6.11\pm2.0)\times10^{-10}$, where $\eta$ is the ratio between the number of baryons and photons. This value of $\eta$ indicates that the majority of the universe is not of a baryonic nature.
 
-%The burning question now is, what might dark matter be? The stuff must exist, so testable models should be proposed.
-
-\subsection{Weakly Interacting Massive Particles (WIMPs)}
-
-%Observations (or lack thereof) of dark matter exclude interactions via electromagnetism and the strong force. However, this does not exclude weak interactions.
-
-\subsubsection{Freezeout and the WIMP Miracle}
-
-%Supposing a population of particles existed in equilibrium with the rest of the universe at some early epoch (before BBN), as the univere expanded and cooled the production and annihilation reactions would begin to fall out of equilibrium. At some point, the universe was hot enough to allow for $\chi \bar{\chi} \leftrightarrow f \bar{f}$. However, once the temperature had dropped, the reverse reaction would become impossible, leaving $\chi \bar{\chi} \rightarrow f \bar{f}$. Eventually even this would become impossible, leaving no allowed reactions.
-
-\subsection{Axions}
-
-%Originally proposed as a solution to the strong-CP problem, axions were suggested to be dark matter candidates in [].
-
-\subsection{Neutrinos}
-
-%The elephant in the room at this point is neutrinos. Neutrinos only interact via the weak and gravitational forces, and should be dead ringers for dark matter. Why, then, are we still looking? The answer lies in temperature. Due to the extremely low mass of neutrinos, any amount of energy greater than a few eV is sufficient to make the neutrino ultrarelativistic. Additionally, there are no mechanisms whereby a lot of neutrinos can lose a lot of energy. So, once a neutrino is created, it will tend to hold on to whatever energy it has.
-
-%Now, if the early universe was filled with ultrarelativistic matter, the structure formation we observe today could not have occurred. Any overdensity of ultrarelativistic matter will have a greater outflux than influx, which will tend to smoothe out any tendency of matter to clump under the influence of gravity. During the period of primary structure formation, most of the universe's neutrinos would have been ultrarelativistic, and so if they had been a significant component of dark matter the universe today would have a much more uniform distribution of mass, as opposed to the observed scattered delta functions. Additionally, Planck limits $\Omega_\nu$ to $<$ value~\cite{}, which is far too low to be a dominant component.
+\begin{figure}[htbp]
+\centering
+    \includegraphics[width=\textwidth]{figures/dm/bbn_eta}
+    \caption{The evolution of the relative abundance of deuterium depends strongly on the ratio between baryons and photons in the early universe. Measuring the deuterium abundance in the early universe admits a value of the baryon density during this epoch, which indicates that only a small fraction of the universe is baryonic. Figure from~\cite{Steigman:2007xt}.}\label{fig:bbn}
+\end{figure}
 
 \section{Searching for Dark Matter}
 
-%Now that a promising model of dark matter have been proposed, some time should be spent discussing how it might be tested. There are three classes of experiments to detect WIMPs. One can try to produce them by smashing known standard model particles together. Or, one can try to observe two WIMPs smashing into each other and annihilating. Thirdly, one can try to observe a WIMP directly interacting with some standard model particle. We will discuss these three methods, their limitations, and their strengths.
+To search for dark matter, we need some ideas of what to look for. Starting from things we already know, we can consider priors from both astrophysics and particle physics. We know any dark matter must be gravitationally bound to the Milky Way, which limits the maximum velocity to be escape velocity from the galaxy $v_{esc} \approx 600\1{km/s}$. Moreover, we know that dark matter does not experience significant self-interactions, and must have a long lifetime compared to the age of the universe.
+
+The traditional approach has been to assume strong priors from both cosmology and particle physics, where a thermal relic particle and weak-scale physics beyond the standard model (BSM) like supersymmetry give rise to the Weakly Interacting Massive Particle (WIMP)~\cite{Jungman:1995df}.
+
+If we relax the strong particle physics prior, we arrive at a generic thermal or quasi-thermal relic particle with not much to show for possible interaction mechanisms.
+
+Relaxing just the cosmological physics prior gives rise to the QCD axion, first proposed to solve the strong CP problem~\cite{Peccei:1977,Weinberg:1978,Wilczek:1978}. Despite having very low masses ($10^{-12}\1{eV}$ to $10^{-2}\1{eV}$), the production mechanism of axions~\cite{Preskill:1983,Abbott:1983,Dine:1983} allows them to be created cold.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/dm/feynman_diag}
+    \caption{A Feynman diagram showing possible interactions between a Standard Model fermion \textit{f} and a dark matter particle $\chi$, and the three different search methodologies.}\label{fig:feynman}
+\end{figure}
 
 \subsection{Production Searches}
 
-%Were one to take two standard model particles, give them together with gratuitous amounts of energy, and and smash them into one another, one generally produces a large menagerie of other particles that tend to decay fairly quickly. However, assuming there is some nonzero coupling between dark matter and the standard model, there is a probability that instead of producing other standard model particles, the collision will produce dark matter which will leave the detector without causing it to trigger. The signature of this will be missing energy and momentum from the collision. The goal, then, is to search through reams of data for these signatures. However, if there isn't a trigger there is no evidence that anything happened in the detector. This means one has to look for cases where both dark matter and standard model particles are created (so something can cause a trigger), but each additional coupling in the Feynman diagram is accompanied by a reduced probability. As the strength of these couplings is not known, this process is a little like searching for a needle in a haystack when you don't know what a needle looks like.
+Attempts to make dark matter at colliders are led by the CMS~\cite{cms:2008} and ATLAS~\cite{atlas:2008} experiments at the LHC, following the interaction along the right side of Figure~\ref{fig:feynman}. Various parameter spaces are searched for the signatures of new particles, for instance the Higgs boson~\cite{cms:2012,atlas:2012}. Because any dark matter particle produced in the collision between two (for instance) protons is not expected to interact with a detector before escaping, the experimental signature of such an event would be missing momentum. The results so far are consistent with Standard Model expectations~\cite{atlas:2016,cms:2017}.
 
 \subsection{Annihilation Searches}
 
-%Given the density of dark matter observed today, there is some finite probability that two dark matter particles will run into each other with sufficient energy to annihilate. If we happen to be fortunate enough to be pointing a telescope towards this event at the appropriate time, its signature could be detected. The goal here is to filter out which events are from known astrophysical sources and which are the dark matter signals. This is never straightforward. One could compare it to searching for a needle in a stack of slightly different needles. On numerous occasions, peaks have shown up in the data to some significance, but then vanish once a complementary experiment begins collecting data in that region of the spectrum. Additionally, the astrophysical sources are not yet completely understood.
+In any region of higher dark matter density, such as galactic centers, the probability increases for any two dark matter particles to have some interaction with each other.
 
 \subsection{Scattering Searches}
 
-%We can continue to rotate our Feynman graph to demonstrate a scattering event. In a scattering event, the interaction between the dark matter particle and the target standard model particle will cause the target to recoil. The infomation generated in this event will be contained in the ionization of the target atom, its resulting scintillation, and the creation of phonons as the nucleus recoils into its neighboring atoms. Depending on the specifics of the detector, some combination of these can be collected. The two leading technologies in this field are based on germanium crystals and liquid noble time projection chambers (TPCs).
-
 \subsubsection{Energy spectrum}
+
+To calculate the expected spectrum of energy deposited in a detector, we combine information about the density and velocity distribution of galactic dark matter, $\rho_0$ and $f(v,t)$ respectively, the differential scattering cross-section $\dd\sigma/\dd E(E,v)$, and the mass of the target and dark matter particles $m_A$ and $m_{\chi}$, respectively, as described in (for example)~\cite{Undagoitia:2015gya,Lewin:1996}:
+\begin{equation}\label{eq:recoil_spectrum}
+\frac{\dd R}{\dd E}(E,t) = \frac{\rho_0}{m_A \cdot m_{\chi}} \int\dd^3v\,v\,f(v,t)\frac{\dd\sigma}{\dd E}(E,v)
+\end{equation}
+
+The time dependence of equation~\eqref{eq:recoil_spectrum} arises due to the motion of the earth around the sun (and, to a much lesser extent, of a detector around the earth).
+
+In general, the differential scattering cross-section can be expressed as a combination of spin-independent and spin-dependent components,
+\begin{equation}\label{eq:si_sd}
+\frac{\dd\sigma}{\dd E} = \frac{m_A}{2\mu_{A}^2v^2}(\sigma_0^{\n{SI}}F^2_{\n{SI}}(E) + \sigma_0^{\n{SD}}F^2_{\n{SD}}(E))
+\end{equation}
+where $\mu_A$ is the reduced mass of the dark matter and target particle and $F_i$ is the spin-dependent or -independent form factors. Figure~\ref{fig:dm_rate} shows the expected differential rate for a spin-independent cross-section of $10^{-45}~\n{cm^2}$ for a variety of different materials, WIMPs of mass $25$ or $100\1{GeV/c^2}$, and with and without the form-factor correction.
+
+\begin{figure}[htb]
+    \begin{tabular}{cc}
+    \includegraphics[width=0.5\textwidth]{figures/dm/rate_comp_v03} & \includegraphics[width=0.5\textwidth]{figures/dm/rate_var_vs01} \\
+    \end{tabular}
+    \caption{(Left) WIMP differential interaction rate for a particle of mass $100\1{GeV/c^2}$ and cross-section $10^{-45}\1{cm^2}$ for a variety of different target materials. (Right) Reducing the WIMP mass to $25\1{GeV/c^2}$ yields the dashed lines, and neglecting the form factor yields the dotted lines. Figures from~\cite{Undagoitia:2015gya}.}~\label{fig:dm_rate}
+\end{figure}
+
+Reducing the mass of the dark matter particle increases the number density (as the energy density is fixed) and consequently the flux of particles through the detector, but as the particle velocity is constrained lower mass means lower energy, which in turn means less energy deposited in the detector.
 
 \subsubsection{Annual modulation}
 
+As the earth orbits around the sun, the sun in turn orbits the galactic center. In June, the velocities of the earth and sun are aligned, and in December they are antialigned. Thus, during June the flux of dark matter particles through a detector is slightly larger and in December is slightly less. Following~\cite{Freese:2012xd}, the energy spectrum can then be expressed as a Fourier series, of which the first two terms are
+\begin{equation}\label{eq:modulation}
+\frac{dR}{dE}(E,t) = S_0(E) + S_m(E)\cos (\omega t - \phi)
+\end{equation}
+where $S_0$ is the rate averaged over one year, $S_m$ the modulation amplitude (subject to $|S_m| \ll S_0$), $\omega = (2\pi)/(1~\n{year})$ the angular frequency, and $\phi$ the phase offset, set such that the rate has a maximum in June. Assuming that the detector operational stability is good for period of approximately one year or more, a modulation in the event rate can be measured and some potential dark matter interaction investigated~\cite{Aprile:2017yea}.
+
 \subsubsection{Backgrounds}
+
+As the expected signature of a dark matter interaction is a low-energy nuclear recoil, any process that results in the same is a potential background. Sources of neutrons, then, are especially dangerous. The three dominant sources nuclear recoil background sources for XENON1T are radiogenic and cosmogenic neutrons, and coherent elastic neutrino-nuclear scattering (CEvNS)~\cite{Freedman:1977,Scholberg:2015}. Radiogenic neutrons are due to the $(\alpha,n)$ reaction and spontaneous fission stemming from decays of material contaminants of primordial uranium and thorium chains. Cosmogenic neutrons arise from muon-induced spallation, and CEvNS events are primarily due to neutrinos produced by $^8$B in the solar core. Taken together, the expected nuclear recoil background rate in the range (4, 50) $\n{keV}_{nr}$ in XENON1T is $(0.6 \pm 0.1)\1{(t\cdot y)^{-1}}$~\cite{Aprile:2015uzo}, predominantly from the radiogenic neutrons. Below 3~$\n{keV}_{nr}$ the rate from CEvNS increases significantly, rising to $\sim 90\1{(t\cdot y)^{-1}}$ at a 1~keV threshold.
+
+Additionally, there are backgrounds rising from electronic recoils that leak into the nuclear recoil region of interest. Because the discrimination between electronic and nuclear recoils is merely good and not perfect, an ER rejection level of $99.5\%$ means $0.5\%$ of ER events will leak into the NR band. The major sources of ER events are low-energy $\beta$ decays of \Pb~(stemming from \Rn) and $^{85}$Kr, solar neutrinos from the $pp$ process that scatter off electrons, Compton scatters from $\gamma$s emitted by contaminants in the materials, and low-energy $2\nu\beta\beta$ decays of $^{136}$Xe, as shown in Figure~\ref{fig:er_bkg}.
+
+\begin{figure}[htb]
+\centering
+    \includegraphics[width=\textwidth]{figures/dm/er_bkg_low}
+    \caption{The simulated low-energy electronic recoil background spectrum in the XENON1T fiducial volume. The energy region of interest for dark matter events is the first bin. The concentration of \Rn~is $10\1{\mu Bq/kg}$ and of Kr is $<0.2\1{ppt}$. The $^{136}$Xe abundance is assumed to be natural. Figure from~\cite{Aprile:2015uzo}.}\label{fig:er_bkg}
+\end{figure}
+
+To mitigate these backgrounds, the krypton can be removed by cryogenic distillation~\cite{Aprile:2016xhi} and the \Rn~and material components by careful material screening and selection~\cite{Aprile:2017ilq}. The assumed values for XENON1T are a \Rn~concentration of $10\1{\mu Bq/kg}$ and Kr of $<0.2\1{ppt}$ (of which the $^{85}$Kr abundance is $2\times10^{-11}$). This gives XENON1T the lowest background rate of any dark matter experiment of $0.1\1{counts (keV\cdot tonne\cdot day)^{-1}}$.
