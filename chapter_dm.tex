@@ -22,7 +22,7 @@ and generalize the expression Kepler found to give us a relationship relating th
 
 Armed with equations~\eqref{eq:mass_distribution} and~\eqref{eq:rotation_curve}, we can calculate $M(r)$ by observing a galaxy with telescopes and assuming some stellar mass distribution, and then make some prediction for $v(r)$. Using Doppler-shifted lines of stars or dwarf galaxies, the orbital velocities can be measured and compared to the prediction from the mass distribution, as seen in figure~\ref{fig:rotation_curve}, an image of the Triangulum galaxy (M33)~\cite{Corbelli:1999af}.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
     \includegraphics[width=0.8\textwidth]{figures/dm/m33_rotation}
     \caption{Rotation curve of M33, from~\cite{Corbelli:1999af}. The measured rotation speeds cannot be explained by the observed distribution of stars and dust and require the addition of a hidden source of mass to reproduce the observations.}\label{fig:rotation_curve}
@@ -40,7 +40,7 @@ The observations of the dynamics of clusters of galaxies yields fairly clear ind
 
 The Bullet Cluster (1E 0657-558) is an excellent example of both galaxy cluster dynamics and weak lensing, and also furnishes additional information on dark matter. Figure~\ref{fig:bullet_cluster} is a composite image from Hubble Space Telescope (HST), Chandra X-ray Observatory, and Magellan. The pink is the hot x-ray gas (seen by Chandra), and forms the majority of the baryonic mass of the cluster. The powerful shock produced during the collision is clearly seen in the subcluster on the right, giving indications of the speed of the collision, and also the mass of that subcluster. The blue regions, centered on the visible galaxies, show the weak lensing centers.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
    \includegraphics{figures/dm/bullet_cluster}
    \caption{The Bullet Cluster of galaxies, from~\cite{bullet}. Two subclusters passed through each other without significantly affecting the constituent galaxies, however the hot x-ray gas (pink) experienced significant disruption and was pulled away. Despite the majority of visible mass being contained within the gas, a lensing study reveals that the lensing centers (blue) are still centered on the galaxies, indicating that the intracluster gas, while dominating the baryonic mass, is not a major component of the total cluster mass, and also that this invisible matter does not experience significant self-interactions~\cite{Kahlhoefer:2013dca}.}\label{fig:bullet_cluster}
@@ -68,7 +68,13 @@ In cases where the lensing object is not sufficiently dense or massive to create
 
 \subsection{Structure formation}
 
-Millenium~\cite{Springel:2005nw}, Illustris~\cite{Genel:2014lma,Vogelsberger:2014dza,Sijacki:2014yfa}, IllustrisTNG~\cite{Pillepich:2017jle},
+After the creation of atoms some $400\,000$ years following the Big Bang, larger structures started forming under the influence of gravity. Any region of slightly higher density started accumulating more matter. This process can be simulated by starting from measurements of the density of the early universe (discussed below) and propagating interactions of gravity and electromagnetism over time. While the computational cost of simulating the universe is, predictably, quite high, this has been done with great success by the Millenium~\cite{Springel:2005nw}, Illustris~\cite{Genel:2014lma,Vogelsberger:2014dza,Sijacki:2014yfa}, and IllustrisTNG~\cite{Pillepich:2017jle} projects. The results found by these simulations is that the large scale structure observed in the universe does not form under the interaction of baryonic matter alone. The inclusion of dark matter is necessary for these structures to form. Indeed, the structures observed in these simulations, as shown in Figure~\ref{fig:structure}, bears very strong resemblance to what is seen with telescopes.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/dm/TNG300_gas_dens_temp}
+    \caption{An image from the TNG300 simulation of IllustrisTNG~\cite{Pillepich:2017jle} showing the baryon density and the gas temperature. Without the inclusion of a significant quantity of dark matter, the kind of structure observed in the universe does not form.}\label{fig:structure}
+\end{figure}
 
 \subsection{Cosmic Microwave Background (CMB)}
 
@@ -78,7 +84,7 @@ Pensias and Wilson were the first to turn a sensitive microwave telescope to the
     \begin{tabular}{cc}
     \includegraphics[width=0.5\textwidth]{figures/dm/cmb0} & \includegraphics[width=0.5\textwidth]{figures/dm/cmb3} \\
     \end{tabular}
-    \caption{(Left) The cosmic microwave background radiation as measured by WMAP~\cite{Bennett:2012zja}. The temperature of the universe is flat and lacking any features above the a few parts per million. (Right) After subtracting the contributions from various backgrounds, we see the temperature profile of the universe at the moment when photons decoupled from baryons.}\label{fig:cmb}
+    \caption{(Left) The cosmic microwave background radiation as measured by WMAP~\cite{Bennett:2012zja}. The temperature of the universe is flat and lacking any features above the a few parts per million. (Right) After subtracting the contributions from various backgrounds, we see the temperature profile of the universe at the moment when photons decoupled from baryons about $380\,000$ years after the Big Bang. Hotter regions had a greater concentration of the primordial soup and formed from quantum fluctuations in the early universe.}\label{fig:cmb}
 \end{figure}
 
 Certain regions radiate at a slightly higher temperature, indicating a greater concentration of the soup of baryons and photons in the early universe. These differences arose due to quantum fluctuations during the early expansion. This temperature map can be expanded in the spherical harmonics and a power spectrum plotted. Various cosmological models can be tested by fitting to this spectrum, as shown in Figure~\ref{fig:cmb_ps}.
@@ -86,10 +92,10 @@ Certain regions radiate at a slightly higher temperature, indicating a greater c
 \begin{figure}[htb]
 \centering
     \includegraphics[width=0.8\textwidth]{figures/dm/planck2015_cmb}
-    \caption{The power spectrum of the spherical harmonic expansion of the CMB. The lack of damping on the second peak indicates significant contributions to the universe from non-baryonic matter.}\label{fig:cmb_ps}
+    \caption{The power spectrum of the spherical harmonic expansion of the CMB from Planck~\cite{Ade:2015xua}. The lack of damping on the second peak indicates significant contributions to the universe from non-baryonic matter.}\label{fig:cmb_ps}
 \end{figure}
 
-The model with the best fit is $\Lambda$CDM, which at its simplest is a six-parameter model that describes the universe as filled with cold (non-relativistic) dark matter (CDM) with addtional contributions from dark energy ($\Lambda$)~\cite{Riess:1998cb}. From the results extracted from the fit we learn a variety of things about the universe. Of key importance are the various contributions to the total energy content of the universe. The baryonic fraction $\Omega_b$ is merely $0.049$, the dark matter fraction $\Omega_{DM}$ $0.265$, and the dark energy fraction $\Omega_{\Lambda}$ $0.686$. Thus, the majority of the universe is not of a baryonic nature.
+The model with the best fit is $\Lambda$CDM, which at its simplest is a six-parameter model that describes the universe as filled with cold (non-relativistic) dark matter (CDM) with addtional contributions from dark energy ($\Lambda$)~\cite{Riess:1998cb}. From the results extracted from the fit we learn a variety of things about the universe. Of key importance are the various contributions to the total energy content of the universe. The baryonic fraction $\Omega_b$ is merely $0.049$, the dark matter fraction $\Omega_{\n{DM}}$ $0.265$, and the dark energy fraction $\Omega_{\Lambda}$ $0.686$. Thus, the majority of the universe is not of a baryonic nature.
 
 \subsection{Big Bang Nucleosynthesis (BBN)}
 
@@ -107,27 +113,53 @@ By comparing the prediction from theory with measurements (Ref~\cite{Steigman:20
 
 To search for dark matter, we need some ideas of what to look for. Starting from things we already know, we can consider priors from both astrophysics and particle physics. We know any dark matter must be gravitationally bound to the Milky Way, which limits the maximum velocity to be escape velocity from the galaxy $v_{esc} \approx 600\1{km/s}$. Moreover, we know that dark matter does not experience significant self-interactions, and must have a long lifetime compared to the age of the universe.
 
-The traditional approach has been to assume strong priors from both cosmology and particle physics, where a thermal relic particle and weak-scale physics beyond the standard model (BSM) like supersymmetry give rise to the Weakly Interacting Massive Particle (WIMP)~\cite{Jungman:1995df}.
+The traditional approach has been to assume strong priors from both cosmology and particle physics, where a thermal relic particle and weak-scale physics beyond the standard model (BSM) like supersymmetry give rise to the Weakly Interacting Massive Particle (WIMP)~\cite{Jungman:1995df}, on which we will primarily focus.
 
 If we relax the strong particle physics prior, we arrive at a generic thermal or quasi-thermal relic particle with not much to show for possible interaction mechanisms.
 
 Relaxing just the cosmological physics prior gives rise to the QCD axion, first proposed to solve the strong CP problem~\cite{Peccei:1977,Weinberg:1978,Wilczek:1978}. Despite having very low masses ($10^{-12}\1{eV}$ to $10^{-2}\1{eV}$), the production mechanism of axions~\cite{Preskill:1983,Abbott:1983,Dine:1983} allows them to be created cold.
 
+By assuming some unknown interaction mechanism between dark matter particles and standard model particles, we can draw a Feynman diagram to represent possible ways to investigate the nature of dark matter, as shown in Figure~\ref{fig:feynman}.
+
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/dm/feynman_diag}
-    \caption{A Feynman diagram showing possible interactions between a Standard Model fermion \textit{f} and a dark matter particle $\chi$, and the three different search methodologies.}\label{fig:feynman}
+    \caption{A Feynman diagram showing possible interactions between a Standard Model fermion \textit{f} and a dark matter particle $\chi$, and three different search methodologies.}\label{fig:feynman}
 \end{figure}
 
 \subsection{Production Searches}
 
-Attempts to make dark matter at colliders are led by the CMS~\cite{cms:2008} and ATLAS~\cite{atlas:2008} experiments at the LHC, following the interaction along the right side of Figure~\ref{fig:feynman}. Various parameter spaces are searched for the signatures of new particles, for instance the Higgs boson~\cite{cms:2012,atlas:2012}. Because any dark matter particle produced in the collision between two (for instance) protons is not expected to interact with a detector before escaping, the experimental signature of such an event would be missing momentum. The results so far are consistent with Standard Model expectations~\cite{atlas:2016,cms:2017}.
+Attempts to make dark matter at colliders are led by the CMS~\cite{cms:2008} and ATLAS~\cite{atlas:2008} experiments at the LHC, following the interaction along the right side of Figure~\ref{fig:feynman}. Various parameter spaces are searched for the signatures of new particles, for instance the Higgs boson~\cite{cms:2012,atlas:2012}. Because any dark matter particle produced in the collision between (for instance) two protons is not expected to interact with a detector before escaping, the experimental signature of such an event would be missing momentum. Several searches for this signature have been performed, but the results so far are consistent with Standard Model expectations~\cite{atlas:2016,cms:2017}.
 
 \subsection{Annihilation Searches}
 
-In any region of higher dark matter density, such as galactic centers, the probability increases for any two dark matter particles to have some interaction with each other.
+In a region with higher dark matter density, such as galactic centers, the probability increases for any two dark matter particles to have some interaction with each other. Following the left side of Figure~\ref{fig:feynman}, two dark matter particles that mutually annihilate could create a pair of standard model particles, which a detector could observe. Many experiments are engaged in these searches, including AMS~\cite{Aguilar:2013} and Fermi-LAT~\cite{Akermann:2013uma} in space, and HESS~\cite{Abramowski:2014tra}, VERITAS~\cite{Arlen:2012}, and MAGIC~\cite{Aleksic:2013xea} on land, to name but a few. While occasional signals are seen at some significance, such as the $3.5\1{keV}$ line~\cite{Boyarsky:2014jta,Bulbul:2014sua} observed in 2014, astrophysical sources have been proposed and a concensus on the origin of these signals has not been reached~\cite{Shah:20166efh,Ahnen:2016qkx,Abdallah:2016ygi,Archambault:2017wyh,Albert2016uux}.
 
 \subsection{Scattering Searches}
+
+The final interaction to discuss is the bottom of Figure~\cite{fig:feynman}. Here, a dark matter particle scatters off a target particle, imparting some momentum to the target. The three types of signals from these interactions are phonons, photons, and electron/hole pairs. Most detectors are designed to collect two of these three, leading to a wide variety of detector materials, designs, and configuration. To name but a few, there are CDMS~\cite{Akerib:2005,Agnese:2015ywx}, CRESST~\cite{Kluck:2017hnn}, and EDELWEISS~\cite{Armengaud:2009hc,Armengaud:2017rzu} (crystals, Si/Ge and inorganic), PICO~\cite{Amole:2015pla,Amole:2017dex} and COUPP~\cite{Manuel:2016klm} (bubble chambers), DEAP~\cite{Amaudruz:2017ibl,Amaudruz:2017ekt} (argon scintillation), XMASS~\cite{Abe:2013tc} (xenon scintillation), DarkSide~\cite{Agnes:2014bvk,Agnes:2015ftt} and ArDM~\cite{Marchionni:2010fi,Calvo:2015uln,Calvo:2016hve} (argon time projection chambers), and XENON10~\cite{Angle:2007uj}, ZEPLIN~\cite{Akimov:2011tj}, XENON100~\cite{Aprile:2012jh,Aprile:2013doa}, LUX~\cite{Akerib:2013tjd}, PandaX-II~\cite{Cui:2017nnn}, and XENON1T~\cite{Aprile:2017aty} (xenon time projection chambers). The ability of liquid noble detectors to scale better than crystals makes them the dominant technology, and they continue to push to greater sensitivities. In these direct detection experiments, the usual parameter space to report results is that of the WIMP-nucleon scattering cross section versus the WIMP mass, as shown in Figure~\ref{fig:limits}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/dm/limit_plot}
+    \caption{Expected sensitivity of XENON1T to the spin-independent WIMP-nucleon scattering cross section, from~\cite{Aprile:2015uzo}. Included are results and exclusion limits from DAMA-LIBRA~\cite{Savage:2008er}, CDMS-SI~\cite{Agnese:2013rvf}, XENON10~\cite{Angle:2013}, SuperCDMS~\cite{Agnese:2014aze}, PandaX~\cite{Xiao:2014}, DarkSide-50~\cite{Agnes:2015ftt}, XENON100~\cite{Aprile:2012nq}, and LUX~\cite{Akerib:2015rjg}. The background due to coherent neutrino-nuclear scattering is from~\cite{Billard:2013qya}. The scalability of liquid noble detectors, especially those using xenon, have significantly outpaced semiconductors above a dark matter mass of a few GeV. Also shown is the projected sensitivity for the XENONnT detector upgrade. The decrease of sensitivity to lower mass dark matter arises from the reduced energy deposition in an interaction and the difficulty of detecting these smaller signals, and the decrease towards higher mass is due to the decreasing dark matter number density.}\label{fig:limits}
+\end{figure}
+
+There are a number of other topics important to direct detection experiments to discuss, such as backgrounds and the specifics of the expected signals.
+
+\subsubsection{Backgrounds}
+
+The limiting factor of any experiment is the background to the dark matter signal. As the expected signature of a WIMP interaction is a low-energy nuclear recoil, any process that results in the same is a potential background. Sources of neutrons, then, are especially dangerous. The three dominant sources nuclear recoil background sources for XENON1T are radiogenic and cosmogenic neutrons, and coherent elastic neutrino-nuclear scattering (CEvNS)~\cite{Freedman:1977,Scholberg:2015,Billard:2013qya}. Radiogenic neutrons are due to the $(\alpha,n)$ reaction and spontaneous fission stemming from decays of material contaminants of primordial uranium and thorium chains. Cosmogenic neutrons arise from muon-induced spallation, and CEvNS events are primarily due to neutrinos produced by $^8$B in the solar core. Taken together, the expected nuclear recoil background rate in the range (4,~50) $\n{keV}_{nr}$ in XENON1T is $(0.6 \pm 0.1)\1{(t\cdot y)^{-1}}$~\cite{Aprile:2015uzo}, predominantly from the radiogenic neutrons. Below 3~$\n{keV}_{nr}$ the rate from CEvNS increases significantly, rising to $\sim 90\1{(t\cdot y)^{-1}}$ at a 1~keV threshold.
+
+Additionally, there are backgrounds rising from electronic recoils that leak into the nuclear recoil region of interest. Because the discrimination between electronic and nuclear recoils is merely good and not perfect, an ER rejection level of $99.5\%$ means $0.5\%$ of ER events will leak into the NR band. The major sources of ER events are low-energy $\beta$ decays of \Pb~(stemming from \Rn) and $^{85}$Kr, solar neutrinos from the $pp$ process that scatter off electrons, Compton scatters from $\gamma$s emitted by contaminants in the materials, and low-energy $2\nu\beta\beta$ decays of $^{136}$Xe, as shown in Figure~\ref{fig:er_bkg}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{figures/dm/er_bkg_low}
+\caption{The simulated low-energy electronic recoil background spectrum in the XENON1T fiducial volume. The energy region of interest for dark matter events is the first bin. The concentration of \Rn~is $10\1{\mu Bq/kg}$ and of Kr is $<0.2\1{ppt}$. The $^{136}$Xe abundance is assumed to be natural. Figure from~\cite{Aprile:2015uzo}.}\label{fig:er_bkg}
+\end{figure}
+
+To mitigate these backgrounds, the krypton can be removed by cryogenic distillation~\cite{Aprile:2016xhi} and the \Rn~and material components by careful material screening and selection~\cite{Aprile:2017ilq}. Neutrino backgrounds are, obviously, impossible to shield against or reduce, and represent fundamental limitations to the search for dark matter. The assumed values for XENON1T are a \Rn~concentration of $10\1{\mu Bq/kg}$ and Kr of $<0.2\1{ppt}$ (of which the $^{85}$Kr abundance is $2\times10^{-11}$). This gives XENON1T the lowest background rate of any dark matter experiment of $0.1\1{counts (keV\cdot tonne\cdot day)^{-1}}$.
 
 \subsubsection{Energy spectrum}
 
@@ -142,7 +174,7 @@ In general, the differential scattering cross-section can be expressed as a comb
 \begin{equation}\label{eq:si_sd}
 \frac{\dd\sigma}{\dd E} = \frac{m_A}{2\mu_{A}^2v^2}(\sigma_0^{\n{SI}}F^2_{\n{SI}}(E) + \sigma_0^{\n{SD}}F^2_{\n{SD}}(E))
 \end{equation}
-where $\mu_A$ is the reduced mass of the dark matter and target particle and $F_i$ is the spin-dependent or -independent form factors. Figure~\ref{fig:dm_rate} shows the expected differential rate for a spin-independent cross-section of $10^{-45}~\n{cm^2}$ for a variety of different materials, WIMPs of mass $25$ or $100\1{GeV/c^2}$, and with and without the form-factor correction.
+where $\mu_A$ is the reduced mass of the dark matter and target particle and $F_i$ is the spin-dependent or -independent form factors. Figure~\ref{fig:dm_rate} shows the expected differential rate for a spin-independent cross-section of $10^{-45}\1{cm^2}$ for a variety of different materials, WIMPs of mass $25$ or $100\1{GeV/c^2}$, and with and without the form-factor correction.
 
 \begin{figure}[htb]
     \begin{tabular}{cc}
@@ -151,7 +183,7 @@ where $\mu_A$ is the reduced mass of the dark matter and target particle and $F_
     \caption{(Left) WIMP differential interaction rate for a particle of mass $100\1{GeV/c^2}$ and cross-section $10^{-45}\1{cm^2}$ for a variety of different target materials. (Right) Reducing the WIMP mass to $25\1{GeV/c^2}$ yields the dashed lines, and neglecting the form factor yields the dotted lines. Figures from~\cite{Undagoitia:2015gya}.}~\label{fig:dm_rate}
 \end{figure}
 
-Reducing the mass of the dark matter particle increases the number density (as the energy density is fixed) and consequently the flux of particles through the detector, but as the particle velocity is constrained lower mass means lower energy, which in turn means less energy deposited in the detector.
+Reducing the mass of the dark matter particle increases the number density (as the energy density is fixed) and consequently the flux of particles through the detector, but as the particle velocity is constrained lower mass means lower energy, which in turn means less energy deposited in the detector. Likewise, increasing the dark matter mass reduces the flux.
 
 \subsubsection{Annual modulation}
 
@@ -159,18 +191,4 @@ As the earth orbits around the sun, the sun in turn orbits the galactic center. 
 \begin{equation}\label{eq:modulation}
 \frac{dR}{dE}(E,t) = S_0(E) + S_m(E)\cos (\omega t - \phi)
 \end{equation}
-where $S_0$ is the rate averaged over one year, $S_m$ the modulation amplitude (subject to $|S_m| \ll S_0$), $\omega = (2\pi)/(1~\n{year})$ the angular frequency, and $\phi$ the phase offset, set such that the rate has a maximum in June. Assuming that the detector operational stability is good for period of approximately one year or more, a modulation in the event rate can be measured and some potential dark matter interaction investigated~\cite{Aprile:2017yea}.
-
-\subsubsection{Backgrounds}
-
-As the expected signature of a dark matter interaction is a low-energy nuclear recoil, any process that results in the same is a potential background. Sources of neutrons, then, are especially dangerous. The three dominant sources nuclear recoil background sources for XENON1T are radiogenic and cosmogenic neutrons, and coherent elastic neutrino-nuclear scattering (CEvNS)~\cite{Freedman:1977,Scholberg:2015}. Radiogenic neutrons are due to the $(\alpha,n)$ reaction and spontaneous fission stemming from decays of material contaminants of primordial uranium and thorium chains. Cosmogenic neutrons arise from muon-induced spallation, and CEvNS events are primarily due to neutrinos produced by $^8$B in the solar core. Taken together, the expected nuclear recoil background rate in the range (4, 50) $\n{keV}_{nr}$ in XENON1T is $(0.6 \pm 0.1)\1{(t\cdot y)^{-1}}$~\cite{Aprile:2015uzo}, predominantly from the radiogenic neutrons. Below 3~$\n{keV}_{nr}$ the rate from CEvNS increases significantly, rising to $\sim 90\1{(t\cdot y)^{-1}}$ at a 1~keV threshold.
-
-Additionally, there are backgrounds rising from electronic recoils that leak into the nuclear recoil region of interest. Because the discrimination between electronic and nuclear recoils is merely good and not perfect, an ER rejection level of $99.5\%$ means $0.5\%$ of ER events will leak into the NR band. The major sources of ER events are low-energy $\beta$ decays of \Pb~(stemming from \Rn) and $^{85}$Kr, solar neutrinos from the $pp$ process that scatter off electrons, Compton scatters from $\gamma$s emitted by contaminants in the materials, and low-energy $2\nu\beta\beta$ decays of $^{136}$Xe, as shown in Figure~\ref{fig:er_bkg}.
-
-\begin{figure}[htb]
-\centering
-    \includegraphics[width=\textwidth]{figures/dm/er_bkg_low}
-    \caption{The simulated low-energy electronic recoil background spectrum in the XENON1T fiducial volume. The energy region of interest for dark matter events is the first bin. The concentration of \Rn~is $10\1{\mu Bq/kg}$ and of Kr is $<0.2\1{ppt}$. The $^{136}$Xe abundance is assumed to be natural. Figure from~\cite{Aprile:2015uzo}.}\label{fig:er_bkg}
-\end{figure}
-
-To mitigate these backgrounds, the krypton can be removed by cryogenic distillation~\cite{Aprile:2016xhi} and the \Rn~and material components by careful material screening and selection~\cite{Aprile:2017ilq}. The assumed values for XENON1T are a \Rn~concentration of $10\1{\mu Bq/kg}$ and Kr of $<0.2\1{ppt}$ (of which the $^{85}$Kr abundance is $2\times10^{-11}$). This gives XENON1T the lowest background rate of any dark matter experiment of $0.1\1{counts (keV\cdot tonne\cdot day)^{-1}}$.
+where $S_0$ is the rate averaged over one year, $S_m$ the modulation amplitude (subject to $|S_m| \ll S_0$), $\omega = (2\pi)/(1~\n{year})$ the angular frequency, and $\phi$ the phase offset, set such that the rate has a maximum in June. Assuming that the detector operational stability is good for period of approximately one year or more, a modulation in the event rate can be measured and some potential dark matter interaction investigated~\cite{Aprile:2017yea,Abe:2018mxq}.
