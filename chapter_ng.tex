@@ -122,16 +122,16 @@ At low recoil energies, the pulse shape discrimination becomes less efficient. D
 
 \begin{figure}[!htbp]
 \centering
-    \includegraphics[height=1\textheight]{figures/ng/acceptance}
+    \includegraphics[width=\textwidth]{figures/ng/acceptance}
     \caption{The acceptance of the pulse shape cut (shown in Fig.~\ref{fig:hist2d}) as a function of energy. The Gaussian fraction above the pulse shape cut is shown by the (green) data points. The two points at the highest recoil energies are calculated with a wider bin width due to low statistics in the neutron band at these energies. The (blue) solid line is a lowpass-filtered interpolation of those data points. The $1\sigma$ uncertainty band on this acceptance is also shown (shaded blue).}
     \label{fig:acceptance}
 \end{figure}
 
 \subsection{Convolution}\label{sec:convolution}
 
-The initial neutron energy spectrum in the neutron generator fusion region, calculated as described in section~\ref{sec:initialneutronspectrum}, is shown in Fig.~\ref{incident_spectrum}. As can be seen, a plasma fusion generator as used here does not produce a truly monoenergetic neutron spectrum. Due to the dependence of the fusion cross section on the neutron emission angle relative to the momentum of the incident deuteron, the spectrum shows two peaks at $2.22\1{MeV}$ and $2.72\1{MeV}$ in the lab frame, corresponding to emission angles of $180\degree$ and $0\degree$, respectively.
+The initial neutron energy spectrum in the neutron generator fusion region, calculated as described in section~\ref{sec:initialneutronspectrum}, is shown in Fig.~\ref{fig:incident_spectrum}. As can be seen, a plasma fusion generator as used here does not produce a truly monoenergetic neutron spectrum. Due to the dependence of the fusion cross section on the neutron emission angle relative to the momentum of the incident deuteron, the spectrum shows two peaks at $2.22\1{MeV}$ and $2.72\1{MeV}$ in the lab frame, corresponding to emission angles of $180\degree$ and $0\degree$, respectively.
 
-Neutrons from this spectrum are propagated from the fusion region using GEANT4. The resulting neutron energy spectrum at the NE213 detector position is also shown in Fig.~\ref{incident_spectrum}, where we normalized the spectra to the energy range from $2.2 - 2.7\1{MeV}$ for ease of comparison. The most significant impact to the neutron energy spectrum comes from scattering in the cooling water that surrounds the neutron generator fusion chamber. This causes the long tail towards lower energies and gives rise to the asymmetric peak structure.
+Neutrons from this spectrum are propagated from the fusion region using GEANT4. The resulting neutron energy spectrum at the NE213 detector position is also shown in Fig.~\ref{fig:incident_spectrum}, where we normalized the spectra to the energy range from $2.2 - 2.7\1{MeV}$ for ease of comparison. The most significant impact to the neutron energy spectrum comes from scattering in the cooling water that surrounds the neutron generator fusion chamber. This causes the long tail towards lower energies and gives rise to the asymmetric peak structure.
 
 \begin{figure}[!htbp]
 \centering

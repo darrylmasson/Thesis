@@ -1,6 +1,6 @@
 % PSD, v1.0
 
-\chapter{Pulse shape discrimination in liquid organic scintillators}
+\chapter{Pulse shape discrimination in liquid organic scintillators}\label{ch:psd}
 
 \paragraph{Abstract} To calibrate the response of XENON1T to nuclear recoils, we acquired a deuterium-deuterium plasma fusion neutron generator. Before deploying it on the world's most sensitive dark matter detector, it must be characterized (see Chapter~\ref{ch:ng}). To characterize it we must first understand the neutron detectors selected for this purpose, specifically, how to separate the neutron-induced signals from the backgrounds. The standard method of discriminating the nuclear recoil signals from the electronic recoil background in these detectors is via the shape of the pulse. In the liquid organics popular for detection of fast neutrons, nuclear and electronic recoils excite molecules to states with different livetimes. A variety of algorithms, both new and well-known, were used for this purpose. The results have been published as Lang et al, Nuclear Instrumentation and Methods, A856:26-31 (2017) and are reproduced here.
 
@@ -116,7 +116,7 @@ Prior to analysis, $10^5$ events identified as NR or ER by CCM are selected in a
 
 \begin{figure}[htbp]
 \centering
-    \includegraphics[width=\columnwidth]{figures/psd/fig_discrim_hists}
+    \includegraphics[height=\textheight]{figures/psd/fig_discrim_hists}
     \caption{Plots of various discrimination parameters versus energy for the CCM~(a), FSE~(b), LAP~(c), PGA~(d), and SEF~(e) algorithms. The $99\%$ rejection cut of electronic recoils is also shown in each case. The upper populations are the respective nuclear recoil bands.}\label{fig:discrimination_plot}
 \end{figure}
 
@@ -191,16 +191,17 @@ The PGA algorithm has the lowest efficiency above $30\1{keV_{ee}}$, consistent w
 The processing speed of each algorithm was measured on a dataset of approximately $500\,000$ events (about $550\1{MB}$), both with and without the C++ compiler optimizations available in the GNU compiler collection version 4.8.3, using a standard desktop computer. The results are show in Table~\ref{tab:benchmarks}. From this we see that the increased low-energy performance of the SEF algorithm comes at a very high computational cost.
 
 \begin{table}[htbp]
-\begin{tabular}{c p{26mm}p{26mm}}
-Algorithm & Rate without \newline optimizations & Rate with \newline optimizations \\
-\hline
-PGA & $1.6\times10^6$ & $4.8\times10^6$ \\
-CCM & $168\,000$ & $1.6\times10^6$ \\
-FSE & $4\,300$ & $84\,000$ \\
-LAP & $1\,100$ & $16\,000$ \\
-SEF & 110 & 230 \\ \hline
-\end{tabular}
-\caption{Processing rates of the different algorithms, given in units of waveforms/sec, using a standard desktop computer.}\label{tab:benchmarks}
+\centering
+    \begin{tabular}{c p{26mm}p{26mm}}
+    Algorithm & Rate without \newline optimizations & Rate with \newline optimizations \\
+    \hline
+    PGA & $1.6\times10^6$ & $4.8\times10^6$ \\
+    CCM & $168\,000$ & $1.6\times10^6$ \\
+    FSE & $4\,300$ & $84\,000$ \\
+    LAP & $1\,100$ & $16\,000$ \\
+    SEF & 110 & 230 \\ \hline
+    \end{tabular}
+    \caption{Processing rates of the different algorithms, given in units of waveforms/sec, using a standard desktop computer.}\label{tab:benchmarks}
 \end{table}
 
 \section{Conclusions}

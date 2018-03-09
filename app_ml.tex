@@ -2,7 +2,7 @@
 
 \chapter{Event selection using machine learning techniques}\label{app:ml}
 
-\paragrapn{Abstract} Machine learning algorithms present powerful new tools with which to do data analysis. With the ability of a clustering algorithm to look for groupings in multiple dimensions simultaneously, more powerful selection criteria can be made by exploiting the large dimensionality of the datasets commonly used. In this appendix, we walk through a simple application of a clustering algorithm to select \Rn~and \Po~in XENON1T.
+\paragraph{Abstract} Machine learning algorithms present powerful new tools with which to do data analysis. With the ability of a clustering algorithm to look for groupings in multiple dimensions simultaneously, more powerful selection criteria can be made by exploiting the large dimensionality of the datasets commonly used. In this appendix, we walk through a simple application of a clustering algorithm to select \Rn~and \Po~in XENON1T.
 
 \section{Introduction}
 
@@ -21,7 +21,7 @@ Most ML techniques require data to be scaled to a set range for the algorithms t
 
 Also, it is important to decide which parameters of a dataset are useful for clustering. In XENON1T the full list of variables available to the analyst contains over 100 entries. While this can be used, it significantly increases the computational cost of the clustering, and often doesn't add any extra information useful for the algorithm to use. For instance, most analyses don't care about the minor differences between the results from the different position reconstruction methods. One method of dimensionality reduction is via Principle Component Analysis (PCA), which attempts to find the greatest variance from orthogonal combinations of variables. Alternately, variables can be manually chosen where there is a good motivation for separation.
 
-For this analysis, the variables used are $cS1$, $cS2$, $s2_range_50p_area$ (width of the s2 signal that contains 50\% of the area, generally referred to as ``s2 width''), and $r_3d_nn$ and $z_3d_nn$ (positions reconstructed by the neural network, using the 3D position correction). These five variables are then scaled to lie in $[0,1]$, except for $cS2$ which is scaled so $\log cS2 \in [0,1]$, via the \texttt{MinMaxScaler} in the \texttt{preprocessing} module.
+For this analysis, the variables used are $cS1$, $cS2$, $s2\_range\_50p\_area$ (width of the s2 signal that contains 50\% of the area, generally referred to as ``s2 width''), and $r\_3d\_nn$ and $z\_3d\_nn$ (positions reconstructed by the neural network, using the 3D position correction). These five variables are then scaled to lie in $[0,1]$, except for $cS2$ which is scaled so $\log cS2 \in [0,1]$, via the \texttt{MinMaxScaler} in the \texttt{preprocessing} module.
 
 \section{Clustering}
 
@@ -38,7 +38,7 @@ SKL offers a variety of clustering algorithms, including:
     \item \texttt{GaussianMixture}
 \end{itemize}
 
-Most algorithms are highly tunable, but the \texttt{GaussianMixture} method offers excellent out-of-the-box performance, very fast computation time. Others, like DBSCAN, take a lot of tweaking but can provide superior results. The Gaussian mixture takes, as an input, the desired number of clusters. It can take some tuning to find the best value for this; we take a value of 4. The value returned by the method is an array the same length as the input data, where each entry in the array is the cluster ID of the corresponding event. The populations themselves are largely constant if the clustering is redone, but the pouplation IDs often change. We show the results in various common groupings of parameters in Figure~\fig{fig:clustering}.
+Most algorithms are highly tunable, but the \texttt{GaussianMixture} method offers excellent out-of-the-box performance, very fast computation time. Others, like DBSCAN, take a lot of tweaking but can provide superior results. The Gaussian mixture takes, as an input, the desired number of clusters. It can take some tuning to find the best value for this; we take a value of 4. The value returned by the method is an array the same length as the input data, where each entry in the array is the cluster ID of the corresponding event. The populations themselves are largely constant if the clustering is redone, but the pouplation IDs often change. We show the results in various common groupings of parameters in Figure~\ref{fig:clustering}.
 
 \begin{figure}[htbp]
     \includegraphics[width=\textwidth]{figures/ml/ml_clustering}
@@ -51,3 +51,5 @@ Once clustering is completed, the bulk alphas (green population) can be easily s
     \includegraphics[width=0.8\textwidth]{figures/ml/ml_split_alphas}
     \caption{Once a clean selection of \Rn~and \Po~is in hand, separating them with a simple curve is straightforward.}\label{fig:split_alphas}
 \end{figure}
+
+This process of scaling and clustering can be repeated in an iterative fashion, but the problem very quickly reaches a stalemate unless different variables are clustered.

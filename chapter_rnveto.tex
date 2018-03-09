@@ -10,30 +10,29 @@ The analysis of the ${}^{220}$Rn calibration data from XENON100~\cite{Aprile:201
 
 Unless otherwise noted, values for thermodynamic properties of xenon used in this chapter are from NIST~\cite{NIST}.
 
-Let us begin with a brief review of the relevant portion of the decay chain of primordial uranium, as shown in Figure~\ref{fig:useries}. \Pb~decays to the ground state of $^{214}$Bi with a branching ratio of $11.0\%$, and a fraction of these decays lie in the dark matter signal region of interest. This is the primary source of background in this energy range~\cite{Aprile:2015uzo}.
+Let us begin with a brief review of the relevant portion of the decay chain of primordial uranium, as shown in Figure~\ref{fig:useries}. \Rn, a noble element, readily diffuses out of the materials, mixes easily with the xenon, and also bypasses the majority of purification systems. \Pb~decays to the ground state of $^{214}$Bi with a branching ratio of $11.0\%$, and a fraction of these decays lie in the dark matter signal region of interest. This is the primary source of background in this energy range~\cite{Aprile:2015uzo}.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\textwidth]{figures/rnveto/uranium_series}
+    \includegraphics[width=\textwidth, clip=true, trim= 5 295 5 10]{figures/rnveto/decay_scheme_rn222}
     \caption{A section of the decay chain of primordial ${}^{238}$U. Atoms of \Rn~emanate out of impurities in the metals used in detector construction and mix throughout the xenon volume. Low-energy decays of \Pb~that decay directly to the ground state of $^{214}$Bi are the leading source of background in the dark matter ROI~\cite{Aprile:2015uzo}.}\label{fig:useries}
 \end{figure}
 
-\Rn, being a noble element, readily diffuses out of the materials, mixes easily with the xenon, and also bypasses the majority of purification systems.
-
 \subsection{A review of convection}~\label{sec:convec_review}
 
-The two most common types of convection are natural convection, arising from thermodynamically-driven density gradients, and forced convection, arising from the action of a pump or other device. We will focus here on natural convection, as this dominates over forced convection inside the TPC. The dimensionless quantities commonly associated with natural convection are the Rayleigh and Grashof numbers~\cite{Chandrasekhar:1961,Grashof}, given by
+The two most common types of convection are natural convection, arising from thermodynamically-driven density gradients, and forced convection, arising from the action of a pump or other such device. We will focus here on natural convection, as this dominates over forced convection inside the TPC. Buoyancy-driven convection arises when it becomes more thermodynamically efficient for a fluid volume to transfer energy via mass transfer (moving warmer elements from heat sources to heat sinks) than for heat to move via thermal diffusion. The dimensionless quantities commonly associated with natural convection are the Rayleigh and Grashof numbers~\cite{Chandrasekhar:1961,Grashof}, given by
+
 \begin{align}
 \n{Ra}_x &= \frac{g\beta\Delta T x^3}{\nu\alpha} = \n{Gr}_x\n{Pr} \\
-    \n{Gr}_x &= \frac{g\beta\Delta T x^3}{\nu^2}
+\n{Gr}_x &= \frac{g\beta\Delta T x^3}{\nu^2}
 \label{eq:dimensionless}
 \end{align}
 
-Here, $\n{Ra}$ is the Rayleigh number and $\n{Gr}$ the Grashof number, $g$ the earth's gravitational field ($9.8\1{m/s^2}$), $\beta$ the coefficient of thermal expansion ($XX\1{units}$), $\nu$ the kinematic viscosity $XX\1{units}$), $\alpha$ the thermal diffusivity ($XX\1{units}$), $\Delta T$ the temperature difference ($0.3\1{K}$), and $x$ the chracteristic length scale ($1\1{m}$). $\n{Gr}$ relates buoyancy and viscosity and depends on the details of the volume, while the Prandtl number $\n{Pr}$~\cite{Prandtl} is the ratio between viscous and thermal diffusion rates and is a function purely of the fluid. For xenon at the temperatures involved here, the value is $XX$.
+Here, $\n{Ra}$ is the Rayleigh number and $\n{Gr}$ the Grashof number, $g$ the earth's gravitational field ($9.8\1{m/s^2}$), $\beta$ the coefficient of thermal expansion ($2.38\times10^{-3}\1{K^{-1}}$), $\nu$ the kinematic viscosity $1.49\times10^{-7}\1{m^2/s}$), $\alpha$ the thermal diffusivity ($6.81\times10^{-8}\1{m^2/s}$), $\Delta T$ the temperature difference ($0.3\1{K}$), and $x$ the chracteristic length scale ($1\1{m}$). $\n{Gr}$ relates buoyancy and viscosity and depends on the details of the volume, while the Prandtl number $\n{Pr}$~\cite{Prandtl} is the ratio between viscous and thermal diffusion rates and is a function purely of the fluid. For xenon at the temperatures of interest here, the value is $2.2$.
 
-If we evaluate the Grashof and Rayleigh numbers, we find values of \todo{XX} and \todo{YY} respectively, indicating a laminar boundary layer, and a convection speed of order $\order{XX\1{mm/s}}$.
+If we evaluate the Grashof and Rayleigh numbers, we find values of $3\times10^{11}$ and $7\times10^{11}$ respectively, which indicate a turbulent boundary layer.
 
-We can compare this to the expectation from forced convection. The two inlet pipes at the bottom of the detector are $10\1{mm}$ in diameter and expand into the $1\1{m}$ diameter of the active region. Thus, from mass continuity, we expect the velocity to decrease from $10\1{mm/s}$ ($50\1{slpm}$ recirculation rate corresponds to $5\1{g/s}$ or $1.7\1{cm^3/s}$)to a bulk average of $2\1{\mu m/s}$. The Reynolds number associated with this velocity is \todo{XX}, which indicates that natural convection will dominate.
+We can compare this to the expectation from forced convection. The two inlet pipes at the bottom of the detector are $10\1{mm}$ in diameter and expand into the $1\1{m}$ diameter of the active region. A recirculation rate of $50\1{slpm}$ corresponds to $300\1{g/min}$ or $5\1{g/s}$ of xenon. With a liquid density of about $3\1{g/cm^3}$, this will correspond to a flow speed of $1\1{cm/s}$ in each pipe. From mass continuity, we expect the velocity to decrease by a factor of about 5000 to a bulk average of $10\1{\mu m/s}$. The Reynolds number associated with this velocity is $60$, which indicates that natural convection will dominate.
 
 \section{Convection in XENON1T}~\label{sec:convection}
 
@@ -43,75 +42,93 @@ To measure convection we require two decays out of a decay chain so that there i
 \begin{enumerate}
 \item One isotope in the chain must be capable of being injected into the detector and must mix throughout.
 \item The two decays of interest must be easily identifiable and shouldn't confuse position reconstruction in any way.
-\item The livetime of the second decay must be relatively short such that $v_{ave}\tau$ is larger than position reconstruction uncertainties, yet small enough such that within two or three livetimes it's still closer to its parent than any others (to facilitate easy matching).
-\item Any further activity in the decay chain must either decay away quickly or be removable (decay is preferable), unless this measurement is done at the end of the detector's lifetime, in which case this can be relaxed.
+\item The livetime of the second decay must be relatively short such that $v_{ave}\tau$ is larger than position reconstruction uncertainties, yet small enough such that within two or three lifetimes it's still closer to its parent than any others (to facilitate easy matching).
+\item Any further activity in the decay chain must either decay away quickly or be removable (decay is preferable).
 \end{enumerate}
 
 Requirememt $(1)$ excludes all decay chains without some gasseous form, or that cannot form some gasseous compount (conceptually similar to $\n{CH}_3\n{T}$ or $\n{UF}_6$). Requirement $(2)$ points towards isotopes that primarily have an $\alpha$ mode, as a high-energy $\gamma$ will scatter multiple times, which makes position reconstruction difficult. Isotopes with $\beta$-decays are difficult to identify due to the lack of defining spectral features. Requirement $(3)$ can be fulfilled by reducing the injected activity, but this then means the measurement requires more time. Furthermore, if the livetime of the second isotope is not short compared to the timescale of convection, this also makes matching difficult, as the effects of curvature of the fluid streamlines will need to be incorporated when the convection map is constructed.
 
-Pairings of radon and polonium are often ideal for this purpose. Both elements tend to decay via $\alpha$ decay and only rarely emit $\gamma$s during the process, which makes clean populations relatively easy to select. Radon, being a noble element, is easy to introduce into the detector and can bypass most purification systems, and, with the exception of \Rn, have no long-lived progeny, fulfilling requirement $(4)$.
+Pairings of radon and polonium are often ideal for this purpose. Both elements tend to decay via $\alpha$ decay and only rarely emit $\gamma$s during the process, which makes clean populations relatively easy to select. Radon, being a noble element, is easy to introduce into the detector and can bypass most purification systems, and, with the exception of \Rn, have no long-lived progeny, fulfilling requirement $(4)$. If this measurement is done at the end of the detector's lifetime this can be relaxed, however this would preclude the possibility of investigating any changes in the convection pattern over time.
 
 \subsection{$^{220}$Rn-$^{216}$Po}
 
-Given how successful the pairing of $^{220}$Rn and $^{216}$Po were for XENON100 for convection measurements, it is a logical place to start for XENON1T. However, as shown in Figure~\ref{fig:rn220}, the only a paucity of the $^{220}$Rn atoms injected into the active volume reach the drift region, with the majority decaying at or below the cathode.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{figures/rnveto/z_cs1}
-\caption{\todo{PLACEHOLDER IMAGE} A plot of {\it s1\_area\_fraction\_top} (the fraction of the S1 seen by the top PMT array, an excellent proxy for the $z$ coordinate) versus {\it s1} for the alpha ROI using $^{220}$Rn calibration data. The majority of events are in the very bottom of the detector at or below the cathode, with only a few reaching the drift region where convection can be measured.}\label{fig:rn220}
-\end{figure}
+Given how successful the pairing of $^{220}$Rn and $^{216}$Po were for XENON100 for convection measurements, it is a logical place to start for XENON1T. However, the convection timescale for XENON100 ($\sim2$ minutes) is much shorter than that for XENON1T, so $^{220}$Rn, with only a $55$ second half-life, cannot mix throughout the detector before it decays. Only a paucity of the $^{220}$Rn atoms injected into the active volume reach the drift region, with the majority decaying at or below the cathode.
 
 \subsection{$^{222}$Rn-$^{218}$Po}
 
 Another available option to match \Po~decays to their parent \Rn~decays. This is a far less trivial endeavour, as the $3.1\1{min}$ half-life of \Po~is quite lengthy, so even at a very modest $1\1{mm/s}$ convection speed, half of all polonium atoms will move 10s of cm away from their parents. Also, the \Rn~background is both boon and bane. As it is mixed uniformly, this provides potential matched pairs in the entire active volume, however no \Rn~or \Po~decays will happen very far from another \Rn~or \Po, which increases the probability of forming incorrect matches.
 
-The \Rn~background rate is $14\1{\mu Bq/kg}$, for a total activity in the active volume of $28\1{mBq}$. The population of \Rn~necessary to provide this activity is easily found via $R = \frac{\dd N}{\dd t} = -\lambda N$, where $R$ is the rate, $\lambda = \ln 2/t_{1/2}$ the decay constant, and $N$ the number of atoms. Thus, we find the \Rn~population size is about $13\,300\1{atoms}$. These will mix uniformly throughout the detector, giving an average distance between \Rn~atoms to be $3.9\1{cm}$. We apply the same calculations for \Po~and find an average population of $7.5\1{atoms}$. The small population of \Po~means the normal Poissonian fluctuations will have a more significant impact than on \Rn.
+The \Rn~background rate is $14\1{\mu Bq/kg}$, for a total activity in the active volume of $28\1{mBq}$. The population of \Rn~necessary to provide this activity is easily found via $R = \frac{\dd N}{\dd t} = -\lambda N$, where $R$ is the rate, $\lambda = \ln 2/t_{1/2}$ the decay constant, and $N$ the number of atoms. Thus, we find the \Rn~population size is about $13\,300\1{atoms}$. These will mix uniformly throughout the detector, giving an average distance between \Rn~atoms of $3.9\1{cm}$. We apply the same calculations for \Po~and find an average population of $7.5\1{atoms}$. The small population of \Po~means the normal Poissonian fluctuations will have a more significant impact than on \Rn.
 
-\subsubsection{Decay identification}
+\subsubsection{Decay identification}\label{sec:alphaselection}
 
-Selection of \Rn~and \Po~is very straightforward. A plot of the reconstructed $z$-coordinate versus cS1 is shown in Figure~\ref{fig:z_cs1} for alpha decays.
+Selection of \Rn~and \Po~is very straightforward. A plot of the reconstructed $z$-coordinate versus cS1 is shown in Figure~\ref{fig:z_cs1} for the alpha region of interest.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{figures/rnveto/z_cs1}
-\caption{Reconstructed $z$ position versus corrected scintillation light for the alpha ROI. Note the breakdown of the correction factor towards the top and bottom as PMT saturation becomes significant. Four populations are evident in the bulk: $^{210}$Po, \Rn, \Po, and $^{214}$Po. The $^{214}$Po is often misreconstructed due to the topology of \BiPo~events deep in the detector, which smears out its population.}\label{fig:z_cs1}
+    \includegraphics[width=\textwidth]{figures/rnveto/z_cs1}
+    \caption{Reconstructed $z$ position versus corrected scintillation light for the alpha ROI. Note the breakdown of the correction factor towards the top and bottom as PMT saturation becomes significant. Four populations are evident in the bulk: $^{210}$Po, \Rn, \Po, and $^{214}$Po. The $^{214}$Po is often misreconstructed due to the topology of \BiPo~events deep in the detector, which smears out its population.}\label{fig:z_cs1}
 \end{figure}
 
-The $^{210}$Po population exists nearly exclusively on the PTFE reflectors that form the wall of the TPC; a radial cut of even one or two cm significantly reduces its size. The $^{214}$Po band shows up much more clearly if one considers {\it s1\_area\_fraction\_top} rather than $z$, as the short half-life of $^{214}$Po causes some confusion for event reconstruction of the $^{214}$Bi-$^{214}$Po events. The larger S1 from the $^{214}$Po is often paired with the larger S2 from the $^{214}$Bi, resulting in a drift-time that is shorter than the actual value by the livetime of the $^{214}$Po atom.
+The $^{210}$Po population exists nearly exclusively on the PTFE reflectors that form the wall of the TPC; a radial cut of even one or two centimeters significantly reduces its size. The $^{214}$Po band shows up much more clearly if one considers \texttt{s1\_area\_fraction\_top} rather than $z$, as the short half-life of $^{214}$Po causes some confusion for reconstruction of the $^{214}$Bi-$^{214}$Po events. The larger S1 from the $^{214}$Po is often paired with the larger S2 from the $^{214}$Bi, resulting in a drift-time that is shorter than the actual value by the livetime of the $^{214}$Po atom.
 
 As we are primarily interested in the center two populations, we can readily select them in the bulk by drawing a few curves on Figure~\ref{fig:z_cs1}, although this tends to break down close to the cathode or liquid surface as the populations smear together. Alternately, machine learning algorithms can exploit separations in multiple parameter spaces simultaneously, providing some additional selection power in these edge regions (see Appendix~\ref{app:ml}).
 
+After making selections, we find population sizes as given in Table~\ref{tab:alpha_pops}.
+
+\begin{table}[htb]
+\centering
+    \caption{Number of \Rn~and \Po~alpha decays measured during the first two XENON1T science runs}\label{tab:alpha_pops}
+    \begin{tabular}[c]{|l|l|cc|}
+        \hline
+        Data & Calendar duration & \Rn & \Po \\
+        SR0 & 56 days & $78\,519$ & $73\,759$ \\
+        SR1 & 369 days & $581\,048$ & $550\,301$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
 \subsubsection{Decay matching}
 
-Armed with reasonably clean populations of \Rn~and \Po, the work of decay matching can begin. To do this in as agnostic a fashion as possible, we begin by plotting the temporal and spatial separations of all \Rn~and all \Po~pairs in Figure~\ref{fig:dsdt}. As we can see, most of this parameter space is dominated by random, incorrect pairings. Within a minute after the \Rn~decay, its \Po~daughter merges with the bulk population and cannot be identified with an agnostic approach.
+Armed with reasonably clean populations of \Rn~and \Po, the work of decay matching can begin. To do this in as agnostic a fashion as possible, we begin by plotting the temporal and spatial separations of all \Rn~and all \Po~pairs in Figure~\ref{fig:dsdt}. As we can see, most of this parameter space is dominated by random, incorrect pairings. Within a minute after a \Rn~decay, its \Po~daughter merges with the bulk population and cannot be identified with an agnostic approach.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{figures/rnveto/dsdt}
-\caption{Spatial and temporal separations of \Rn~and \Po~events. The ``signal'' population of decay pairs begins at the origin and quickly merges with the ``background'' band of random pairs. Thus, an agnostic approach becomes difficult at times longer than about 45 seconds or distances further than about $15\1{cm}$.}\label{fig:dsdt}
+    \includegraphics[width=\textwidth]{figures/rnveto/dsdt}
+    \caption{Spatial and temporal separations of \Rn~and \Po~events. The ``signal'' population of correct pairs begins at the origin and quickly merges with the ``background'' band of random pairs. Thus, an agnostic approach becomes difficult at times longer than about 45 seconds or distances further than about $15\1{cm}$. Pairs are selected from within the red bounded region.}\label{fig:dsdt}
 \end{figure}
 
-If we restrict ourselves to potential matches within 30 seconds, this reduces a significant amount of background. Even though this only gives $1-\exp \lambda_{\mathrm{Po}}t = 10\%$ of all possible decays, one day's worth of background data contains some $2500$ total \Rn~decays, or about $7500$ matched decays per month. Evenly spread over the active region, this is one match every $5\1{cm}$, which is sufficient to do a preliminary mapping of convection.
+To gain the most number of correct matches without being swamped by random matches, we require \Rn~and \Po~matches to be within 30 seconds and 20 centimeters of each other. While this does reduce the amount of background matches, it only allows for $1-\exp \lambda_{\mathrm{Po}}t = 10\%$ of all possible correct matches. Additionally, we require matches to be below the line given by $\n{ds} = 3\1{cm} + 0.53\1{cm/s}\cdot\n{dt}$, which is a generous line above the band of correct matches. By setting these requirements, we collect 7855 matches for SR0 and $59\,554$ matches for SR1.
+
+To evaluate the background contamination to this population, we exploit the symmetries in this parameter space. As the background population is flat in time, by repeating the identical matching process but shifting to the left to avoid the signal region, we can quantify the number of background pairs. A shift in time of 35 seconds yields 553 matches for SR0 and 4351 for SR1. This is a background contamination of about $7\%$.
+
+The distribution of speeds is shown in Figure~\ref{fig:speeds}. The median speed is $3.4\1{mm/s}$, and the 10\% and 90\% quantiles are $1.5$ and $6.0\1{mm/s}$, respectively. This is much slower than what was observed in XENON100 and an order of magnitude less than in LUX. The corresponding convection timescale is therefore about 15 minutes.
+
+\begin{figure}[htb]
+\centering
+    \includegraphics[width=\textwidth]{figures/rnveto/sr1_speed_quantiles}
+    \caption{The distribution of \Po~atom speeds in XENON1T. The vertical dotted lines represent the $10\%$, $50\%$, and $90\%$ quantiles.}\label{fig:speeds}
+\end{figure}
 
 \subsection{Convection map}
 
 By building a three-dimensional map of the displacement of each matched pair we see the shape of the pattern is, as in XENON100 and LUX, a single cell, with much lower speeds of around $3\1{mm/s}$. Figure~\ref{fig:convec} is a projection approximately along the axis of angular momentum.
 
-\begin{figure}[htb]
+\begin{figure}[!p]
 \centering
-\includegraphics[width=\textwidth]{figures/rnveto/convection_full}
-\caption{The measured convection field in XENON1T. Blue arrows indicates upward movcement; red, downward. A single cell pattern, as was observed in XENON100 and LUX, is clearly seen. Typical speeds are $3\1{mm/s}$.}\label{fig:convec}
+    \includegraphics[width=\textwidth]{figures/rnveto/convection_full}
+    \caption{The convection field in XENON1T, measured by matching decays of \Rn~and \Po. Blue arrows indicates upward movement; red, downward. A single cell pattern, as was observed in XENON100 and LUX, is clearly seen. Typical speeds are $3\1{mm/s}$.}\label{fig:convec}
 \end{figure}
 
-We also see some interesting behavior in the corners. The lack of pairs in these regions indicate a few things. It is unlikely that there is no \Rn~there, but it is entirely possible that our event selection requirements perform very poorly here. This also might be interpreted as hints of counter-current eddies forming in the corners of the detector.
+We also see a lack of matched pairs in the corner regions. It is unlikely that there is no \Rn~there, but it is entirely possible that our event selection requirements perform very poorly here. This also might be interpreted as hints of counter-current eddies forming in the corners of the detector.
 
 Once a preliminary map is made, this can be used to distinguish correct pairings of \Rn~and \Po~from random matches. The vector connecting two decay verticies should be approximately aligned with the convection cell for correct matches and have a random direction for the incorrect matches. Additionally, because there is at most one \Po~for each \Rn, once a given \Rn~or \Po~has been matched, all other potential matches involving either atom can be removed from consideration.
 
-The combination of these effects allows for an interative process where the matches with the smallest separations (having the best signal to background ratio) are chosen, and any other matches involving these are removed, which reduces the background to all further matches. This can be done again with matches with slightly larger separations.
+The combination of these effects allows for an interative process where the matches with the smallest separations (having the best signal to background ratio) are chosen, and any other matches involving these are removed, which reduces the background to all further matches. This can be done again with matches with slightly larger separations. However, the efficacy of this iterative technique is limited, because the signal decrease is exponential while the background decrease is merely linear.
 
 \section{Simulation}
 
-As the manner of xenon injection in XENON100, LUX, and XENON1T are all different yet all three have the same convection pattern, we can conclude that recirculation does not have a significant impact on convection. Thus, a computational fluid dynamics (CFD) simulation can have some predictive power between experiments, as long as the thermodynamic boundary conditions are correctly modeled. Additionally, a convection field from simulation can probably reveal more about the underlying detector operation than measurements from data.
+As the manner of xenon injection in XENON100, LUX, and XENON1T are all different yet all three have the same convection pattern, we can conclude that recirculation does not have a significant impact on convection. Thus, a computational fluid dynamics (CFD) simulation can have some predictive power between experiments, as long as the thermodynamic boundary conditions are correctly modeled. Additionally, a convection field from simulation may reveal more about the underlying detector operation than measurements from data.
 
 A variety of different software packages, commercial and otherwise, are available to do this kind of simulation. ANSYS Fluent~\cite{fluent} was used for this work on advice from professor Carlo Scalo of Purdue engineering, also because it is available on the Purdue computing clusters.
 
@@ -119,51 +136,82 @@ A simplified model of the active volume was used to build the simulation mesh, a
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{figures/rnveto/convection_sim}
-\caption{\todo{PLACEHOLDER IMAGE} Simulated convection pattern for XENON1T. A single cell is evident with speeds of a few mm/s. A simple temperature gradient is sufficient to drive this system, though the mechanisms that determine the direction of angular momentum is not yet understood. Counter-currents can be seen in the corners.}\label{fig:cfd_sample}
+    \includegraphics[width=\textwidth]{figures/rnveto/convection_sim}
+    \caption{Simulated convection pattern for XENON1T. A single cell is evident with speeds of a few mm/s. A simple temperature gradient is sufficient to drive this system, though the mechanisms that determine the direction of angular momentum is not yet understood. Counter-currents can be seen in the corners.}\label{fig:cfd_sample}
 \end{figure}
 
 Simulations for both steady-state and transient results were performed. The results agree qualitatively with each other, although vortex shedding from counter-currents in the corners are routinely observed.
 
 \section{Comparison between simulation and data}
 
-The simulation results agree qualitatively with the data. A simple temperature gradient is sufficient to establish and drive a single-cell convection pattern, although the symmetry-breaking mechanism that determines the orientation of the pattern is not yet understood. No correlation has been found between the layout of pipes to and from cryogenics and purification and the direction of cell angular momentum.
+The simulation results agree qualitatively with the data. A simple temperature gradient is sufficient to establish and drive a single-cell convection pattern, although the symmetry-breaking mechanism that determines the orientation of the pattern is not yet understood. No correlation has been found between the layout of pipes to and from cryogenics and purification and the direction of cell angular momentum. Additionally, the spatial distribution of speed between data and simulation are in disagreement. In the simulations, the highest speeds are very close to the walls, and the center region is fairly quiet, while in data the speeds are much more homogonously distributed.
 
 \section{The radon veto}~\label{sec:rnveto}
 
-If it is possible to follow atoms of \Po~around the detector, the next step is to follow atoms further down the decay chain. If \Pb~atoms can be followed and their decays identified, these events can be removed from the analysis. As \Pb~is the dominant background source in the dark matter region of interest~\cite{Aprile:2015uzo}, this has the possibility to significantly boost the sensitivity of the experiment at a marginal cost in exposure. We exploit the fact that because \Pb~is part of a decay chain, the times and positions of its decays have physical significance to the atoms surrounding it.
+If it is possible to follow atoms of \Po~around the detector, the next step is to follow atoms further down the decay chain. If \Pb~atoms can be followed and their decays identified, these events can be removed from the analysis. As \Pb~is the dominant background source in the dark matter region of interest~\cite{Aprile:2015uzo}, removing these events has the possibility to significantly boost the sensitivity of the experiment at a marginal cost in exposure. We exploit the fact that because \Pb~is part of a decay chain, the times and positions of its decays have physical significance to the atoms surrounding it.
 
 \subsection{Technique overview}
 
-While there is nothing about a \Pb~event that is easily identifiable, its parent isotopes (\Rn, \Po) and daughter (\BiPo) can be identified with relative ease using alpha spectroscopy or the BiPo timing structure~\cite{Aprile:2017fhu}. This allows us to bookend the \Pb~event with events that are more easily identified. With this information, an algorithm resembling one for track reconstruction can be employed to improve the confidence with which \Pb~events are tagged by identifying the decays of the parents and daughtber and looking for the convection streamlines that connect them. The \Pb~decay must happen somewhere on the streamline between the \Po~and \BiPo~decays. A stylized representation of this is shown in Figure~\ref{fig:rnveto_schematic} where displacement due to convection is normalized out.
+While there is nothing about a \Pb~event that is easily identifiable, its parent isotopes (\Rn, \Po) and daughter (\BiPo) can be identified with relative ease using alpha spectroscopy or the BiPo timing structure~\cite{Aprile:2017fhu}. This allows us to bookend the \Pb~event with events that are more easily identified. With this information, an algorithm resembling one for track reconstruction can be employed to improve the confidence with which \Pb~events are tagged by identifying the decays of the parents and daughter and looking for the convection streamlines that connect them. The \Pb~decay must happen somewhere on the streamline between the \Po~and \BiPo~decays. A stylized representation of this is shown in Figure~\ref{fig:rnveto_schematic} where displacement due to convection is normalized out.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{figures/rnveto/rnveto_schematic}
-\caption{A simple schematic of how the radon veto works. Low-energy events (in green) due to \Pb~can be identified because they occur on streamlines (shaded regions) connecting \Rn, \Po, and \BiPo~events (in blue), while low-energy events due to other background sources occur at random.}\label{fig:rnveto_schematic}
+    \includegraphics[width=\textwidth]{figures/rnveto/rnveto_schematic}
+    \caption{A simple schematic of how the radon veto works. Low-energy events (in green) due to \Pb~can be identified because they occur on streamlines (shaded regions) connecting \Rn, \Po, and \BiPo~events (in blue), while low-energy events due to other background sources occur at random.}\label{fig:rnveto_schematic}
 \end{figure}
 
 \subsection{Convection-agnostic approach}
 
-To demonstrate a proof of this concept, we employ a convection-agnostic approach. In this method, a sphere is placed around every \Po~or \BiPo~event. Regardless of the size of the sphere or how long one watches it, some fraction of \Pb~decays will occur within it. The size of the sphere can be related to the length of observation time by the average speed of convection, and the observation time can be chosen by a simple optimization to maximize the potential background reduction while minimizing the overall exposure cost.
+To demonstrate a proof of this concept, we employ a convection-agnostic approach. In this method, a growing sphere is placed around the vertex of every \Po~or \BiPo~event and the sphere is watched to see if a low-energy event occurs within it. As the knowledge of convection is not yet sufficient to accurately integrate the position of the \Po~or \BiPo, the center of the sphere remains in a fixed location. Regardless of the size of the sphere or how long one watches it, some fraction of \Pb~decays will occur within it. The rate of growth of the sphere can be set from convection (we take $0.6\1{cm/s}$, the 90th percentile of convection speed), and the observation time can be chosen by a simple optimization to maximize the potential background reduction while minimizing the overall exposure cost. The background reduction is proportional to $1-\exp -\lambda t$, using the decay constant of \Pb~for the \Po-veto, and $^{214}$Bi for the \BiPo-veto. The exposure cost from these spheres is proportional to $t^4$.
 
-The principle background to this Big Sphere method is that of false positives from random coincidence. This can be very easily quantified through a simple Monte Carlo by placing spheres at random locations and random times within the detector, monitoring the sphere for the specified duration, and counting the number of times a low-energy event is observed. This can then be repeated using locations and timestamps of \Po~or \BiPo~events rather than at random. This allows for the clear quantization of the significant of the result. This was applied to science run 0, with results shown in Figure~\ref{fig:bs_sr0}.
+\Po~events are selected as in Section~\ref{sec:alphaselection}, \BiPo~events following the method in~\cite{Aprile:2017fhu}, and low-energy events following the developed XENON1T analysis selection criteria~\cite{Aprile:2017iyp}, with the difference that events are selected up to $150\1{keV}$. Energy regions near the $41\1{keV}$ line from $^{83m}$Kr were cut to remove contamination from this calibration isotope, and the region between 50 and $80\1{keV}$ is blinded for the $^{124}$Xe double electron-capture analsis. All events are required to lie within the 1.3~tonne fiducial volume. We find event populations of $48\,721$ for \Po, $16\,485$ for \BiPo, and 995 in the low-energy region.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{figures/rnveto/veto_time_optimization_sr0}
+    \caption{A simple optimization to find the best veto times for \Po~and \BiPo~events from SR0. The figure of merit used here is the difference between the total background found (proportional to $1-\exp \lambda t$) and the fractional exposure cost (proportional to $t^4$). The best value is marked with the red `x'. We find optimal the times for \Po~to be $22.1\1{s}$ and for \BiPo~to be $35.1\1{s}$. This corresponds to background reductions of $0.8\%$ for \Po~and $1.8\%$ for \BiPo (total $2.7\%$). The exposure cost is $0.66\%$.}\label{fig:veto_time_optimization}
+\end{figure}
+
+The optimal veto times for SR0 are $22.1\1{s}$ and $35.1\1{s}$ for \Po~and \BiPo, respectively. These correspond to background reductions of $0.8\%$ and $1.8\%$, respectively, and a combined exposure cost of $0.66\%$ ($279\1{kg\cdot day}$).
+
+\Pb~events are selected by placing these growing spheres around \Po~and \BiPo~events. Any low-energy event that happens within the boundary in space and time defined by this sphere is tagged.
+
+The principle background to this Big Sphere method is that of false positives from random coincidence. This can be quantified through a simple Monte Carlo by doing this analysis at random locations and random times within the detector, and counting the number of observed events. Alternately, locations and timestamps of \Po~and \BiPo~events can be used, but the search can be done by looking before \Po~and after \BiPo~(ie, where the \Pb~cannot be). The Monte Carlo method allows for the creation of a background distribution, which means we can easily quantify the significance of the result when we look for \Pb~events from \Po~and \BiPo~events. We perform this analysis at random locations and times a total of $10^{5}$ times for each isotope. The background distributions are very well described by Poisson distributions, with shape factors $\mu_{Po} = (1.237 \pm 0.004)$ and $\mu_{BiPo} = (2.420 \pm 0.005)$, as shown in Figure~\ref{fig:bs_sr0}.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{figures/rnveto/BigSphere}
-\caption{\todo{PLACEHOLDER IMAGE} (Top) The results for the convection-agnostic Big Sphere method for science run 0. The background from false positives is well-modeled with a binomial distribution. The number of events found by searching near \Po~and \BiPo~is \todo{XX}. This has a p-value of \todo{YY}, indicating a significant result. Of these events identified, \todo{XX} are in the dark matter signal ROI (bottom)}\label{fig:bs_sr0}
+    \includegraphics[width=\textwidth]{figures/rnveto/sr0_bigsphere_bkg}
+    \caption{The simulated background expectation for the convection-agnostic Big Sphere radon veto method applied to SR0. The background from false positives is well-modeled with a Poisson distribution with shape factors $\mu_{Po} = (1.237 \pm 0.004)$ and $\mu_{BiPo} = (2.420 \pm 0.005)$. The number of events found by searching near \Po~is 8 and \BiPo~is 4. These have p-values of $6.2\times10^{-6}$ and $9.8\times10^{-2}$, respectively, indicating that the Big Sphere method is statistically better than selecting events at random.}\label{fig:bs_sr0}
 \end{figure}
+
+If we apply this technique to the physically motivated locations and times of \Po~and \BiPo~events, we find 8 events from \Po~and 4 events from \BiPo. Looking in the opposite directions in time (before \Po~and after \BiPo) we find 3 and 2 background matches, respectively. Using the background distributions as determined by Monte Carlo, these are significant with p-values of $6.2\times10^{-6}$ and $9.8\times10^{-2}$, respectively.
+
+We must now inspect these events to acertain the quality of these matches. If events cluster in suspicious ways we must then be skeptical of the results, but if they are more or less uniformly distributed we can have more confidence in the results. The most important parameter spaces to investigate are those of space, time, and energy, and we show the distributions of the main population of events in Figures~\ref{fig:match_parameters0} and~\ref{fig:match_parameters1}, along with both the correctly and incorrectly vetoed events.
+
+\begin{figure}[htbp]
+\centering
+    \includegraphics[width=\textwidth]{figures/rnveto/sr0_bs_results_space}
+    \includegraphics[width=\textwidth]{figures/rnveto/sr0_bs_results_time}
+    \caption{Results for the Big Sphere radon veto technique for SR0. The low-energy event population is shown in blue, green circles are events matched after \Po~(correctly matched), red circles matched before \Po~(incorrectly matched), green squares are events matched before \BiPo~(correctly matched), and red squares are matched after \BiPo~(incorrectly matched). Events are distributed uniformly in both space (top) and time (bottom).}\label{fig:match_parameters0}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/rnveto/sr0_bs_results_energy}
+\caption{Results for the Big Sphere radon veto technique for SR0. The low-energy event population is shown in blue, green circles are events matched after \Po~(correctly matched), red circles matched before \Po~(incorrectly matched), green squares are events matched before \BiPo~(correctly matched), and red squares are matched after \BiPo~(incorrectly matched). The events are uniformly distributed in energy/discrimination, although none of the matched events lie in the energy ranged used in the dark matter search ($<70\1{pe}$ in cS1).}\label{fig:match_parameters1}
+\end{figure}
+
+With the highly significant result from the \Po~matching, this means that this technique is significantly better than merely selecting events at random, and this is sufficient to demonstrate that this technique works. What remains now is to scale up beyond this first convection-agnostic approach.
 
 \subsection{Cloud approach}
 
 The Big Sphere method has a number of limitations. Looking in all directions rather than just along the convection streamlines wastes a large amount of exposure, and in cases where multiple low-energy events are observed within the sphere it is impossible to proceed. At most one can be due to \Pb, yet without additional information it is impossible to determine which. This additional information can be found from convection. If an event is on fluid streamlines originating from the \Po~decay vertex or converging to the \BiPo~vertex, it is more likely to be \Pb~than if it occurred far from those streamlines or on otherwise impossible paths.
 
-The computational cost of following these streamlines is non-trivial. It involves a numerical integration of a vector field, and doing this multiple times. Each \Rn~atom can potentially produce a low-energy \Pb~event, so streamlines around every \Rn~must be followed. At a decay rate of $\approx 2500\1{day^{-1}}$, a tonne-year of exposure will contain nearly $500\,000$ total \Rn~events. Streamlines from each of these events must be integrated for (on average) one hour, at sufficiently small timesteps to minimize integration errors.
+Following these streamlines requires numerically integrating the convection vector field. The computational cost of this is non-trivial. Each \Rn~atom can potentially produce a low-energy \Pb~event, so streamlines around every \Rn~must be followed. A tonne-year of exposure will contain about $500\,000$ total \Rn~events, and streamlines from each of these events must be integrated for (on average) one hour, at sufficiently small timesteps to minimize integration errors. By far the most expensive portion of this is the vector field interpolation, which can take a few milliseconds every time. Additionally, one must have a high-resolution and high-accuracy map of the convection field. Without this, errors from interpolation and extrapolation can quickly accumulate and the integrated volume can easily cover large portions of the detector.
 
 \subsection{Diffusion-limited case}
 
-The dominant uncertainties to the radon veto stem from the lack of complete knowledge of the convection pattern. However, we can explore the possibilities of the technique should a perfect understanding of convection be obtained. In this limit, the dominant uncertainties are from position reconstruction and diffusion.
+The dominant uncertainties at this point to the radon veto stem from the lack of sufficiently detailed knowledge of the convection pattern. However, we can explore the possibilities of the technique should a perfect understanding of convection be obtained. In this limit, the dominant uncertainties are from position reconstruction and diffusion.
 
 \subsubsection{Diffusion effects}
 
@@ -175,7 +223,7 @@ When an event happens, we reconstruct its interaction vertex with a uncertainty 
 \item Diffusion constant: $D = \frac{k_BT}{6\pi\eta r} = 1.7\times10^{-3}\1{mm^2/s}$
 \end{itemize}
 
-We find the diffusion constant via the Stokes-Einstein relation for a spherical particle diffusing through a fluid at low Reynolds number~\cite{Sutherland:1905,Einstein:1905,Smoluchowski:1906}. $\eta$ is the viscosity ($0.5\1{mPa s}$~\cite{Legros:1965}) and $r$ is the radius of the particle in question (taken as $0.15\1{nm}$). The displacement of the atom from its initial location will be roughly given by $\Delta s = \sqrt{\pi Dt}$, and the increase in volume can be found by adding $\sqrt{\pi Dt}$ to both r and z. Thus
+We find the diffusion constant via the Stokes-Einstein relation for a spherical particle diffusing through a fluid at low Reynolds number~\cite{Sutherland:1905,Einstein:1905,Smoluchowski:1906}. $\eta$ is the viscosity ($0.5\1{mPa\,s}$~\cite{Legros:1965}) and $r$ is the radius of the particle in question (taken as $0.15\1{nm}$). The displacement of the atom from its initial location will be roughly given by $\Delta s = \sqrt{\pi Dt}$, and the increase in volume can be found by adding $\sqrt{\pi Dt}$ to both r and z. Thus
 
 \begin{equation}
 V(t) = \pi(r_0 + \sqrt{\pi Dt})^2(h_0 + \sqrt{\pi Dt})
@@ -219,12 +267,14 @@ where
 
 For \Pb, $\chi = 4\1{mm^2}$, so $\Delta V = 2.5\1{cm^3}$ or the total volume we must follow per atom is $V_0 + \Delta V = 3.1\1{cm^3}$. Given the average number of \Pb~atoms we expect to have, this will be a total vetoed volume of $200\1{cm^3}$. This is only $10^{-4}$ of the total active volume, and vetoing these volumes has a negligible cost in exposure. We can also calculate the total volumes to track for the parent and daughtber isotopes, but this is only for tagging purposes as we have no need to veto events that aren't \Pb.
 
-If we take a pessimistic approach where we follow each cell for four half-lives (regardless of whether or not the atom in it decays), we find a total vetoed volume of $V(4T_{1/2}) = 300\1{cm^3}$ \todo{CHECK}. Thus, the $200\1{cm^3}$ value is reasonable from this point as well.
+If we take a pessimistic approach where we follow each cell for four half-lives (regardless of whether or not the atom in it decays), we find a total vetoed volume of $V(4T_{1/2}) = 300\1{cm^3}$. Thus, the $200\1{cm^3}$ value is reasonable from this point as well.
 
 \subsubsection{Effect of the drift field}
 
-We expect the drift field to cause the motion of any charged daughtber products to diverge from that of the xenon bulk. This effect can be simulated, but measuring the charge on the daughter ion will be difficult, and this uncertainty reduces the effectiveness of any simulation involving this aspect. In effect it will cause a net downward motion, which will move the ion into other streamlines (or potentially plate onto the cathode). Additionally, as we inject the liquid below the cathode, ions in the liquid will probably have difficulty passing through the cathode mesh and into the drift region.
+We expect the drift field to cause the motion of any charged daughtber products to diverge from that of the xenon bulk. This effect can be simulated, but measuring the charge on the daughter ion will be difficult, and this uncertainty reduces the effectiveness of any simulation involving this aspect. In effect it will cause a net downward motion, which will move the ion into other streamlines (or potentially plate onto the cathode). Additionally, as we inject the liquid below the cathode, ions in the liquid may have difficulty passing through the cathode mesh and into the drift region.
 
-EXO-200 found~\cite{Albert:2015vma} radon daughter ion drift speeds of $\sim 1\1{mm/s}$ at a drift field of $350\1{V/cm}$, with ion neutralization time proportional to the electron lifetime. Additionally, they measured the fraction of radon chain decays that leave the daughtber in an ionized state. In XENON100 the ion drift was a small correction to the $\sim 8\1{mm/s}$ flow speed.
+EXO-200 found~\cite{Albert:2015vma} radon daughter ion drift speeds of $\sim 1\1{mm/s}$ at a drift field of $350\1{V/cm}$, with ion neutralization time proportional to the electron lifetime. Additionally, they measured the fraction of radon chain decays that leave the daughtber in an ionized state. In XENON100 the ion drift was a small correction to the $\sim 8\1{mm/s}$ flow speed. The relatively low drift field ($\order{100}\1{V/cm}$) in XENON1T means ion drift will be even less signficant.
 
 \paragraph{Conclusion}
+
+The radon veto provides a method to reduce the radon background of XENON1T via an offline analysis. A convection-agnostic proof of concept was presented and demonstrates the potential of this technique. The fundamental diffusion-limited implementation was discussed, but the convection pattern is not yet sufficiently understood to allow for the tracking of ions beyond a few minutes.
