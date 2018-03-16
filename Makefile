@@ -21,4 +21,4 @@ full: base
 	${TEX}
 
 clean:
-	rm -rf *.aux *.bbl *.lof *.lot *.log *.blg
+	rm -rf *.aux *.bbl *.lof *.lot *.log *.blg *.toc
