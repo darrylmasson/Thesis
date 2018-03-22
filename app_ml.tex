@@ -2,18 +2,19 @@
 
 \chapter{Event selection using machine learning techniques}\label{app:ml}
 
-\paragraph{Abstract} Machine learning algorithms present powerful new tools with which to do data analysis. With the ability of a clustering algorithm to look for groupings in multiple dimensions simultaneously, more powerful selection criteria can be made by exploiting the large dimensionality of the datasets commonly used. In this appendix, we walk through a simple application of a clustering algorithm to select \Rn~and \Po~in XENON1T.
+\paragraph{Abstract} Machine learning (ML) algorithms present powerful new tools with which to do data analysis. Using the ability of a clustering algorithm to look for groupings in multiple dimensions simultaneously, more powerful selection criteria can be made by exploiting the large dimensionality of the datasets commonly used. In this appendix, we walk through a simple application of a clustering algorithm to select \Rn~and \Po~in XENON1T.
 
 \section{Introduction}
 
 Consider Figure~\ref{fig:bulk_alphas}, showing the distribution of the alpha region of interest for XENON1T. We see the three compact populations of $^{210}$Po, \Rn, and \Po. The color of each point corresponds to its radial position. The $^{210}$Po population exists predominantly on the walls of the detector, while the other two fill the bulk. Additionally, below about $-70$ cm, once PMT saturation starts becoming significant, we see some structure in the bulk alpha population where events closer to the center of the detector have slightly higher values of $cS1$. While manually-drawn lines provide nice separation between about $-80$ and $-10$ cm in $z$, outside that the populations begin to blur together, and a simple 2-dimensional cut becomes ineffective.
 
-\begin{figure}[htb]
-    \includegraphics[width=0.8\textwidth]{figures/ml/ml_fig0}
-    \caption{Alpha region of interest in XENON1T. (Left) The three populations are from decays of $^{210}$Po, \Rn, and \Po. The color of each point corrersponds to the reconstructed radial coordinate of the decay vertex, showing that \Rn~and \Po~events occupy the bulk while $^{210}$Po events occur at the edge of the detector. (Right) The $^{210}$Po events also suffer from poor charge collection, resulting in lower values of $cS2$. Machine learning techniques allow for the development of a cut that operates in multiple dimensions simultaneously, exploiting population separations otherwise difficult to see.}\label{fig:bulk_alphas}
+\begin{figure}[!htbp]
+\centering
+    \includegraphics[width=\textwidth]{figures/ml/ml_fig0}
+    \caption{Alpha-decay region of interest in XENON1T. (Top) The three main populations are from decays of $^{210}$Po, \Rn, and \Po. The color of each point corrersponds to $cS2$, showing that the $^{210}$Po band has reduced charge collection compared to the bulk alphas, and the (misreconstructed) \BiPo~events have larger values of $cS2$. (Bottom) The $^{210}$Po, with lower values of $cS2$, exist almost exclusively on the walls of the TPC. Machine learning techniques allow for the development of a cut that operates in multiple dimensions simultaneously, exploiting population separations otherwise difficult to see.}\label{fig:bulk_alphas}
 \end{figure}
 
-In this chapter, all ML algorithms are those available in the open-source scikit-learn package~\cite{skl} (SKL).
+In this chapter, all ML algorithms are those available in the open-source Python-based scikit-learn package~\cite{skl} (SKL).
 
 \section{Data formatting}
 
@@ -38,18 +39,20 @@ SKL offers a variety of clustering algorithms, including:
     \item \texttt{GaussianMixture}
 \end{itemize}
 
-Most algorithms are highly tunable, but the \texttt{GaussianMixture} method offers excellent out-of-the-box performance, very fast computation time. Others, like DBSCAN, take a lot of tweaking but can provide superior results. The Gaussian mixture takes, as an input, the desired number of clusters. It can take some tuning to find the best value for this; we take a value of 4. The value returned by the method is an array the same length as the input data, where each entry in the array is the cluster ID of the corresponding event. The populations themselves are largely constant if the clustering is redone, but the pouplation IDs often change. We show the results in various common groupings of parameters in Figure~\ref{fig:clustering}.
+Most algorithms are highly tunable, but the \texttt{GaussianMixture} method offers excellent out-of-the-box performance and very fast computation time. Others, like DBSCAN, take a lot of tweaking but can provide superior results. The Gaussian mixture takes, as an input, the desired number of clusters. It can take some tuning to find the best value for this; we take a value of 4. The value returned by the method is an array the same length as the input data, where each entry in the array is the cluster ID of the corresponding event. The populations themselves are largely constant if the clustering is redone, but the pouplation IDs often change. We show the results in various common groupings of parameters in Figure~\ref{fig:clustering}.
 
 \begin{figure}[htbp]
+\centering
     \includegraphics[width=\textwidth]{figures/ml/ml_clustering}
-    \caption{Results from clustering in the alpha ROI, using the \texttt{GaussianMixture} method, displayed in common parameters. The color of each point indicates the cluster.}\label{fig:clustering}
+    \caption{Results from clustering in the alpha ROI, using the \texttt{GaussianMixture} method, displayed in common parameters. The color of each point indicates the cluster. The purple population contains \BiPo~events and some additional higher-energy events; the blue population is predominantly events at the cathode; the green population is is the $^{210}$Po on the PTFE walls; and the yellow population are the bulk \Rn~and \Po~events.}\label{fig:clustering}
 \end{figure}
 
-Once clustering is completed, the bulk alphas (green population) can be easily selected with their population ID. As this population includes both \Rn~and \Po, an additional step is necessary to separate them. For this population, the simplest method of separation is via a line between the two alpha lines in the $z-cS1$ parameter space, as shown in Figure~\ref{fig:split_alphas}. The \Rn~population is on the left of the line, and the \Po~population on the right. Some contamination is evident, but at a very low level.
+Once clustering is completed, the bulk alphas (yellow population) can be easily selected with their population ID. As this population includes both \Rn~and \Po, an additional step is necessary to separate them. For this population, the simplest method of separation is via a line between the two alpha lines in the $z-cS1$ parameter space, as shown in Figure~\ref{fig:split_alphas}. The \Rn~population is on the left of the line, and the \Po~population on the right. Some contamination is evident, but at a very low level.
 
 \begin{figure}[htb]
-    \includegraphics[width=0.8\textwidth]{figures/ml/ml_split_alphas}
+\centering
+    \includegraphics[width=\textwidth]{figures/ml/ml_split_alphas}
     \caption{Once a clean selection of \Rn~and \Po~is in hand, separating them with a simple curve is straightforward.}\label{fig:split_alphas}
 \end{figure}
 
-This process of scaling and clustering can be repeated in an iterative fashion, but the problem very quickly reaches a stalemate unless different variables are clustered.
+This process of scaling and clustering can be repeated in an iterative fashion, but the problem very quickly reaches a stalemate unless different variables are used. More complex clustering problems can require more iterations, but for the application shown here, a single iteration is sufficient.

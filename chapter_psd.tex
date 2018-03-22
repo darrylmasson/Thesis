@@ -34,7 +34,7 @@ Data were collected at three different nominal beam current settings to study th
 
 These datasets are listed in Table~\ref{tab:psd_datasets} with their known fluxes as measured using calibrated detectors at PTB. Dataset 4 has a greater flux than dataset 1, despite the beam conditions being the same, due to the greater cross-sectional area the detector presents to the neutron beam in this orientation.
 
-\begin{table}[htbp]
+\begin{table}[htb]
     \caption{Data for the irradiation of the detector in the neutron field with a mean energy of $2.5\1{MeV}$. }\label{tab:psd_datasets}
 \centering
     \begin{tabular}{c c c r }
@@ -57,7 +57,7 @@ A total of 80 million waveforms (amounting to $85\1{GB}$) were collected from th
 
 As EJ-301 features different decay constants for NR and ER signals, a variety of methods can be used to discriminate the corresponding waveforms. Five PSD algorithms were implemented in a C++ program to perform offline analysis of the data and compute discrimination parameters for each waveform. These algorithms, described in detail below, are the Charge Comparison Method (CCM), Pulse Gradient Analysis (PGA), Fourier Series Expansion (FSE), Laplace Transform (LAP), and a fit to standard events (SEF). Typical scintillation pulses last for $0.5\1{ns}$ per keV of energy deposited. Each digitized waveform was 525~ns in duration, with the trigger falling between 78 and 94~ns. The first 40~ns were used to calculate a simple baseline average as well as the baseline RMS to indicate the noise level, and the integral of the pulse yields the energy.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
     \includegraphics[width=\columnwidth]{figures/psd/fig_annotated_event}
     \caption{A typical gamma event of energy 100 keV. Shown are the trigger and integration thresholds, the ends of the Fast and Slow integral windows, the location of the sample used in the PGA method, the region used for baseline calculations, and the noise level.}\label{fig:psd_waveform}
@@ -133,7 +133,7 @@ Figure~\ref{fig:psd_rateplot} shows the live time-corrected NR energy spectrum, 
 The recoil spectrum extends to just below $1\1{MeV_{ee}}$, as expected from $2.5\1{MeV}$ neutrons and the non-linear response spectrum of proton recoil energies in EJ-301 detectors~\cite{Verbinski:1968,Aksoy:1994,Naqvi:1993}. Other algorithms show similar spectra with some variations below $200\1{keV_{ee}}$ which will be discussed in section~\ref{sec:psd_acceptance}.
 
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
     \includegraphics[width=\textwidth]{figures/psd/fig_rate_hists}
     \caption{Nuclear recoil spectra as measured in the EJ-301 detector using the CCM algorithm. The measured backscatter flux (dotted, red) is subtracted from the total measured flux (dashed, blue) in order to obtain the recoil spectrum of $2.5\1{MeV}$ neutrons (solid, black).}\label{fig:psd_rateplot}
@@ -153,7 +153,7 @@ In order to quantify the acceptance of neutrons, a pure band of NRs directly fro
 
 The acceptance of neutrons is determined by dividing the measured NR spectrum for a given dataset and algorithm (as shown in Figure~\ref{fig:psd_rateplot}) by this "pure" NR spectrum. The resulting energy-dependent acceptance of neutrons at a constant rejection level of ERs is shown in Figure~\ref{fig:psd_acceptance}.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
     \includegraphics[width = \textwidth]{figures/psd/fig_acceptance}
     \caption{Energy dependence of the fraction of nuclear recoil events that are accepted by each algorithm after $99\%$ (top) and $95\%$ (bottom) rejection of electronic recoils.}\label{fig:psd_acceptance}
@@ -165,7 +165,7 @@ In the low-energy region shown in Figure~\ref{fig:psd_acceptance}, the acceptanc
 
 At low energy ($<100\1{keV_{ee}}$), there is considerable overlap between the NR and ER bands. Therefore, we not only want to consider the ability of an algorithm to accept neutrons, but also the purity of the resulting NR spectrum. To this end, we construct a reference sample for each algorithm $i$ that contains events that are NRs with high confidence, using those events that are identified by all other algorithms $j\neq i$ as a NR. As a function of energy, we then calculate how many of the events in the reference sample were also tagged as a NR by the algorithm under investigation. The likelihood that an algorithm has tagged an event in the reference sample as a NR is shown in Figure~\ref{fig:n-1_comparison}.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
     \includegraphics[width = \textwidth]{figures/psd/fig_likelihood}
     \caption{Likelihood that a given algorithm tags an event from a reference sample as being due to a NR. The reference sample consists of events identified as NRs by all algorithms except the algorithm under consideration.}\label{fig:n-1_comparison}
@@ -177,7 +177,7 @@ The inability of the traditional CCM algorithm to identify NR events in a refere
 
 Table~\ref{tab:psd_datasets} lists the total expected neutron flux of $2.5\1{MeV}$ neutrons through the detector for each dataset. Based on the determined absolute neutron rates from the PTB measurements, we reconstruct the detection efficiency of the detectors as function of energy threshold. The results at $99\%$ rejection of ERs are shown in Figure~\ref{fig:psd_efficiencies}. In addition, the expected efficiency from a MC simulation using the NEFF7 code~\cite{Dietze:1982} is shown in Figure~\ref{fig:psd_efficiencies} for the arrangement in which the detector orientation was $90\degree$ at selected energy thresholds. We find that the efficiency measured in the detector is inconsistent with both the overall efficiency described by the NEFF7 code, as well as the functional dependence of the efficiency on the threshold. Independent of the PSD algorithm, the measured efficiency in the EJ-301 detector is lower and less threshold-dependent than that described by the NEFF7 code. We thus conclude that the NEFF7 code can currently not be used to obtain accurate detection efficiency information for EJ-301 liquid scintillator cells.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
     \includegraphics[width = \textwidth]{figures/psd/fig_efficiency}
     \caption{(Top) Comparison between the threshold-dependent efficiency of the SEF algorithm and the prediction from the NEFF7 code in EJ-301. The detector is orientated at $90\degree$. (Bottom) The efficiency of all algorithm as a function of threshold. Note the different energy ranges.}\label{fig:psd_efficiencies}
