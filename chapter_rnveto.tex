@@ -208,7 +208,7 @@ The Big Sphere method has a number of limitations. Looking in all directions rat
 
 Following these streamlines requires numerically integrating the convection vector field. The computational cost of this is non-trivial. Each \Rn~atom can potentially produce a low-energy \Pb~event, so streamlines around every \Rn~must be followed. A tonne-year of exposure will contain about $500\,000$ total \Rn~events, and streamlines from each of these events must be integrated for (on average) one hour, at sufficiently small timesteps to minimize integration errors. By far the most expensive portion of this is the vector field interpolation, which can take a few milliseconds every time. Additionally, one must have a high-resolution and high-accuracy map of the convection field. Without this, errors from interpolation and extrapolation can quickly accumulate and the integrated volume can easily cover large portions of the detector.
 
-\subsection{Diffusion-limited case}
+\subsection{Diffusion-limited case}\label{sec:difflimit}
 
 The dominant uncertainties at this point to the radon veto stem from the lack of sufficiently detailed knowledge of the convection pattern. However, we can explore the possibilities of the technique should a perfect understanding of convection be obtained. In this limit, the dominant uncertainties are from position reconstruction and diffusion.
 
