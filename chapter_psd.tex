@@ -1,6 +1,6 @@
 % PSD, v1.0
 
-\chapter{Pulse shape discrimination in liquid organic scintillators}\label{ch:psd}
+\chapter{PULSE SHAPE DISCRIMINATION IN LIQUID ORGANIC SCINTILLATORS}\label{ch:psd}
 
 \paragraph{Abstract} To calibrate the response of XENON1T to nuclear recoils, we acquired a deuterium-deuterium plasma fusion neutron generator. Before deploying it on the world's most sensitive dark matter detector, it must be characterized (see Chapter~\ref{ch:ng}). To characterize it we must first understand the neutron detectors selected for this purpose, specifically, how to separate the neutron-induced signals from the backgrounds. The standard method of discriminating the nuclear recoil signals from the electronic recoil background in these detectors is via the shape of the pulse. In the liquid organic compounds popular for detection of fast neutrons, nuclear and electronic recoils excite molecules to states with different livetimes. A variety of algorithms, both new and well-known, were implemented for this purpose, and their performance measured, along with the energy dependence of this performance. The results have been published as Lang et al, Nuclear Instrumentation and Methods, A856:26-31 (2017) and are reproduced here.
 
@@ -192,6 +192,7 @@ The processing speed of each algorithm was measured on a dataset of approximatel
 
 \begin{table}[htbp]
 \centering
+    \caption{Processing rates of the different algorithms, given in units of waveforms/sec, using a standard desktop computer.}\label{tab:benchmarks}
     \begin{tabular}{c p{26mm}p{26mm}}
     Algorithm & Rate without \newline optimizations & Rate with \newline optimizations \\
     \hline
@@ -201,7 +202,6 @@ The processing speed of each algorithm was measured on a dataset of approximatel
     LAP & $1\,100$ & $16\,000$ \\
     SEF & 110 & 230 \\ \hline
     \end{tabular}
-    \caption{Processing rates of the different algorithms, given in units of waveforms/sec, using a standard desktop computer.}\label{tab:benchmarks}
 \end{table}
 
 \section{Conclusions}
